@@ -4,19 +4,6 @@
 	<div class="ui inverted vertical masthead center aligned segment">
 	  {% include Page.NavbarTplPath %}
 
-		<script>
-			var tempRequestAddress = 'http://192.168.10.9:5000/gitcache/system/info'
-			var RequestAddress = 'http://192.168.10.54:5000/gitcache/system/info'
-			axios.get(RequestAddress)
-			.then(function(res){
-				console.log("结果",res)
-				var count = res.data.count
-				document.getElementById("dongtai").innerHTML = "目前已经缓存" + count + "个站点"
-			})
-			.catch(function(error) {
-				console.log(error)
-			})
-		</script>
 	  <div class="ui text container">
 	    <img src="/img/favicon.ico" >
 	    <h1 class="ui inverted header">
@@ -160,6 +147,22 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		var tempRequestAddress = 'http://192.168.10.9:5000/gitcache/system/info'
+		var RequestAddress = 'http://192.168.10.54:5000/gitcache/system/info'
+		axios({
+			method: 'get',
+			url: RequestAddress
+		})
+		.then(function(res){
+			console.log("结果",res)
+			var count = res.data.count
+			document.getElementById("dongtai").innerHTML = "目前已经缓存" + count + "个站点"
+		})
+		.catch(function(error) {
+			console.log(error)
+		})
+	</script>
 
  <!-- <div class="ui vertical stripe segment">
 	  <div class="ui aligned centered stackable grid container">
