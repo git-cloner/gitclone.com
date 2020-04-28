@@ -84,8 +84,13 @@
 		>
 		<!-- <p style="line-height: 0.2em;"><span style="color:#2ddc2b">Administrator@9QDZCH8M0W0EK2S</span> <span style="color:#da239a">MINGW64</span> <span style="color: #e0cb21;">~/Desktop</span></p>
 		<p style="line-height: 1.8em;">$ git config url."http://gitclone.com/".insteadOf https://</p> -->
+		<p style="line-height: 0.2em;"><span style="color: #6A737D">方法一（直接clone）</span></p>
 		<p style="line-height: 0.2em;"><span style="color:#2ddc2b">Administrator@9QDZCH8M0W0EK2S</span> <span style="color:#da239a">MINGW64</span> <span style="color: #e0cb21;">~/Desktop</span></p>
 		<p style="line-height: 1.8em;">$ git clone https://gitclone.com/github.com/little51/codechain</p>
+		<p style="line-height: 0.2em;"><span style="color: #6A737D">方法二（设置git参数）</span></p>
+		<p style="line-height: 0.2em;"><span style="color:#2ddc2b">Administrator@9QDZCH8M0W0EK2S</span> <span style="color:#da239a">MINGW64</span> <span style="color: #e0cb21;">~/Desktop</span></p>
+		<p style="line-height: 0.5em;">$ git config --global url."https://gitclone.com/".insteadOf https://</p>
+		<p style="line-height: 0.5em;">$ git clone https://github.com/tendermint/tendermint.git</p>
 		</div>
 		<div
 			class="fadenum1"
@@ -155,7 +160,6 @@
 			url: RequestAddress
 		})
 		.then(function(res){
-			console.log("结果",res)
 			var count = res.data.count
 			document.getElementById("dongtai").innerHTML = "目前已经缓存" + count + "个站点"
 		})
