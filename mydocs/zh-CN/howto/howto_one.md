@@ -1,11 +1,5 @@
 ---
-name: 怎么加速stackoverflow
+name: 加速go get
 ---
 
-# 怎么加速stackoverflow
-
-## 第一步
-
-## 第二步
-
-## 第三步
+加速go get命令
