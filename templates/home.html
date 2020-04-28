@@ -21,7 +21,7 @@
 			<div style="width: 100%;margin: 5px;"><span style="font-size: 2.5em;font-weight: bold;text-align:center">快速上手</span></div>
 			<div style="margin-top: 10px;margin-left: 5px; padding-right: 20px;">
 					<p style="font-family: Lato, Helvetica Neue, Microsoft YaHei, Arial, Helvetica, sans-serif !important;color:#696969">
-						只需在git clone命令中将克隆地址中 github.com 替换为 gitclone.com 即可
+						只需在git clone命令中将克隆地址中嵌入gitclone.com即可
 					</p>
 			</div>
 		</div>
@@ -86,7 +86,7 @@
 		<p style="line-height: 1.8em;">$ git config url."http://gitclone.com/".insteadOf https://</p> -->
 		<p style="line-height: 0.2em;"><span style="color: #6A737D">方法一（直接clone）</span></p>
 		<p style="line-height: 0.2em;"><span style="color:#2ddc2b">Administrator@9QDZCH8M0W0EK2S</span> <span style="color:#da239a">MINGW64</span> <span style="color: #e0cb21;">~/Desktop</span></p>
-		<p style="line-height: 1.8em;">$ git clone https://gitclone.com/github.com/little51/codechain</p>
+		<p style="line-height: 1.8em;">$ git clone https://gitclone.com/github.com/tendermint/tendermint.git</p>
 		<p style="line-height: 0.2em;"><span style="color: #6A737D">方法二（设置git参数）</span></p>
 		<p style="line-height: 0.2em;"><span style="color:#2ddc2b">Administrator@9QDZCH8M0W0EK2S</span> <span style="color:#da239a">MINGW64</span> <span style="color: #e0cb21;">~/Desktop</span></p>
 		<p style="line-height: 0.5em;">$ git config --global url."https://gitclone.com/".insteadOf https://</p>
@@ -154,7 +154,7 @@
 	</div>
 	<script>
 		var tempRequestAddress = 'http://192.168.10.9:5000/gitcache/system/info'
-		var RequestAddress = 'http://111.51.8.199:22001/gitcache/system/info'
+		var RequestAddress = 'https://gitclone.com/gitcache/system/info/'
 		axios({
 			method: 'get',
 			url: RequestAddress
