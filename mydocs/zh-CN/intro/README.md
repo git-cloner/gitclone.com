@@ -2,4 +2,4 @@
 name: github
 ---
 
-这个模块我们将告诉你怎么加速github clone
+加速从github的git clone
