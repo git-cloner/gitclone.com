@@ -20,7 +20,7 @@ name: 加速github
 
 ​	然后正常clone即可
 
-​	这个命令会修改**c:\users\用户名\.gitconfig**，如需提交代码，将这个文件中url配置还原
+​	这个命令会修改**c:\users\用户名\\.gitconfig**，linux的配置文件在~/.gitconfig内，如需提交代码，将这个文件中url配置还原
 
 ## 方法3：镜像
 
