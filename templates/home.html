@@ -10,33 +10,13 @@
 	      {{Tr(Lang, "home.title")}}
 	    </h1>
 			<h2>{{Tr(Lang, "home.tag_line")}}</h2>
-			<h2 id="dongtai"></h2>
+			<h2>目前已经缓存<span id="dongtai" style="color: #15bb0f;"></span>个站点</h2>
 	    <!-- <a class="ui huge primary button" href="{{Page.DocsBaseURL}}">{{Tr(Lang, "home.get_started")}} <i class="right arrow icon"></i></a> -->
 		</div>
 	</div>
 
-	<div style="display: flex;">
-		<div style="flex:0.4"></div>
-		<div style="flex:1; padding-top:50px;padding-left: 30px;">
-			<div style="width: 100%;margin: 5px;"><span style="font-size: 2.5em;font-weight: bold;text-align:center">快速上手</span></div>
-			<div style="margin-top: 10px;margin-left: 5px; padding-right: 20px;">
-					<p style="font-family: Lato, Helvetica Neue, Microsoft YaHei, Arial, Helvetica, sans-serif !important;color:#696969">
-						只需在git clone命令中将克隆地址中嵌入gitclone.com即可
-					</p>
-			</div>
-		</div>
-		<div style="flex:1; padding-top:50px">
-			<div style="width: 100%;margin: 5px;"><span style="font-size: 2.5em;font-weight: bold;text-align:center">效果显著</span></div>
-			<div style="margin-top: 10px;margin-left: 5px; padding-right: 20px;">
-				<p style="font-family: Lato, Helvetica Neue, Microsoft YaHei, Arial, Helvetica, sans-serif !important;color:#696969">
-					首次clone需从 github 上缓存，以后克隆即可从缓存中直接拉取
-				</p>
-			</div>
-		</div>
-		<div style="flex:0.4"></div>
-	</div>
 
-	<div style="display: flex;margin-top: 10px;border-bottom: 1px solid rgba(34,36,38,.15);padding-bottom: 80px; padding-right: 30px;">
+	<div class="ui vertical stripe segment" style="flex: 2;">
 		<style>
 			@keyframes fadenum1 { /*设置内容由显示变为隐藏*/
 				0%{opacity: 0;}
@@ -56,73 +36,61 @@
 				animation: fadenum 100000s infinite;
 			}
 		</style>
-		<div
-		  class="fadenum"
-			style="
-				padding-top: 20px;
-				padding-left: 5px;
-				flex:0.4;
-				margin: 10px;
-			"
-		>
-		</div>
-		<div
-			class="fadenum1"
-			style="
-				background-color: #1b1c1d;
-				padding-top: 20px;
-				color: rgba(255,255,255,.9);
-				padding-left: 15px;
-				padding-top: 30px;
-				padding-bottom: 30px;
-				box-shadow: 1px 1px 5px 3px #888888;
-				border-radius: 10px;
-				flex:1;
-				margin: 10px;
-				font-family: Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono, Bitstream Vera Sans Mono,Courier New,monospace,serif;
-			"
-		>
-		<!-- <p style="line-height: 0.2em;"><span style="color:#2ddc2b">Administrator@9QDZCH8M0W0EK2S</span> <span style="color:#da239a">MINGW64</span> <span style="color: #e0cb21;">~/Desktop</span></p>
-		<p style="line-height: 1.8em;">$ git config url."http://gitclone.com/".insteadOf https://</p> -->
-		<p style="line-height: 0.2em;"><span style="color: #6A737D">方法一（直接clone）</span></p>
-		<p style="line-height: 0.2em;"><span style="color:#2ddc2b">Administrator@9QDZCH8M0W0EK2S</span> <span style="color:#da239a">MINGW64</span> <span style="color: #e0cb21;">~/Desktop</span></p>
-		<p style="line-height: 1.8em;">$ git clone https://gitclone.com/github.com/tendermint/tendermint.git</p>
-		<p style="line-height: 0.2em;"><span style="color: #6A737D">方法二（设置git参数）</span></p>
-		<p style="line-height: 0.2em;"><span style="color:#2ddc2b">Administrator@9QDZCH8M0W0EK2S</span> <span style="color:#da239a">MINGW64</span> <span style="color: #e0cb21;">~/Desktop</span></p>
-		<p style="line-height: 0.5em;">$ git config --global url."https://gitclone.com/".insteadOf https://</p>
-		<p style="line-height: 0.5em;">$ git clone https://github.com/tendermint/tendermint.git</p>
-		</div>
-		<div
-			class="fadenum1"
-			style="
-				/* background-color: #1b1c1d; */
-				color: rgba(255,255,255,.9);
-				/* padding-top: 30px;
-				padding-left: 15px;
-				padding-bottom: 30px; */
-				/* box-shadow: 1px 1px 5px 3px #888888; */
-				border-radius: 10px;
-				flex:1;
-				margin: 10px;
-				font-family: Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono, Bitstream Vera Sans Mono,Courier New,monospace,serif;
-			"
-		>
-			<img src="/img/data.png" style="height: 100%; width: 100%;border-radius: 10px;" alt="">
-		</div>
-		<div
-			class="fadenum"
-			style="
-				padding-top: 20px;
-				padding-left: 5px;
-				flex:0.4;
-				margin: 10px;
-			"
-		>
+		<div class="ui aligned stackable two column grid container">
+			<div class="column fadenum">
+				<div style="width: 100%;margin: 5px;"><span style="font-size: 2.5em;font-weight: bold;text-align:center">快速上手</span></div>
+				<div style="margin-top: 10px;margin-left: 5px; padding-right: 20px;">
+						<p style="font-family: Lato, Helvetica Neue, Microsoft YaHei, Arial, Helvetica, sans-serif !important;color:#696969">
+							只需在git clone命令中将克隆地址中嵌入gitclone.com即可
+						</p>
+				</div>
+				<div
+					style="
+						width: 100%;
+						flex: 1;
+						background-color: #1b1c1d;
+						padding-top: 20px;
+						color: rgba(255,255,255,.9);
+						padding-left: 15px;
+						padding-top: 30px;
+						margin-top: 20px;
+						padding-bottom: 30px;
+						box-shadow: 1px 1px 5px 3px #888888;
+						border-radius: 10px;
+					"
+				>
+					<p style="line-height: 0.2em;"><span style="color: #6A737D">方法一（直接clone）</span></p>
+					<p style="line-height: 1.5em;">git clone https://gitclone.com/github.com/tendermint/tendermint.git</p>
+					<p style="line-height: 0.2em;"><span style="color: #6A737D">方法二（设置git参数）</span></p>
+					<p style="line-height: 1.5em;">git config --global url."https://gitclone.com/".insteadOf https://</p>
+					<p style="line-height: 1.5em;">git clone https://github.com/tendermint/tendermint.git</p>
+				</div>
+			</div>
+			<div class="column fadenum1">
+				<div style="width: 100%;margin: 5px;"><span style="font-size: 2.5em;font-weight: bold;text-align:center">效果显著</span></div>
+				<div style="margin-top: 10px;margin-left: 5px; padding-right: 20px;">
+					<p style="font-family: Lato, Helvetica Neue, Microsoft YaHei, Arial, Helvetica, sans-serif !important;color:#696969">
+						首次clone需从 github 上缓存，以后克隆即可从缓存中直接拉取
+					</p>
+				</div>
+				<div
+					style="
+						width: 100%;
+						background-color: #1b1c1d;
+						color: rgba(255,255,255,.9);
+						margin-top: 20px;
+						padding-top: 30px;
+						padding-bottom: 30px;
+						box-shadow: 1px 1px 5px 3px #888888;
+						border-radius: 10px;
+					"
+				>
+					<p style="line-height: 0.2em;color: #1b1c1d;">git clone https://gitclone.com/github.com/tendermint/tendermint.git</p>
+					<img src="/img/data.png" style="height: 80%; width: 100%;border-radius: 10px;" alt="">
+				</div>
+			</div>
 		</div>
 	</div>
-
-
-
 
 	<div class="ui vertical stripe segment" style="flex: 2;">
 		<div class="ui aligned stackable three column grid container">
@@ -161,7 +129,7 @@
 		})
 		.then(function(res){
 			var count = res.data.count
-			document.getElementById("dongtai").innerHTML = "目前已经缓存" + count + "个站点"
+			document.getElementById("dongtai").innerHTML = ` ${count} `
 		})
 		.catch(function(error) {
 			console.log(error)
