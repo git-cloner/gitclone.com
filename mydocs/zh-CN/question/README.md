@@ -6,7 +6,10 @@ name: 常见问题
 
 ##### Q: 首次clone比较慢，开始无进度显示
 
-A：首次clone，首先从github.com  mirror ，这个过程结束后，客户端才会从mirror clone，才会有进度显示，所以有点卡顿的感觉，但以后的clone会直接出进度条
+A：首次clone，首先从github.com  mirror ，这个过程结束后，客户端才会从mirror clone，才会有进度显示，所以有点卡顿的感觉，但以后的clone会直接出进度条，如果项目较大，clone报504错，请设置git超时参数：
+
+git config --global http.lowSpeedLimit 0
+git config --global http.lowSpeedTime 999999 
 
 ##### Q:当代码库较大时，clone过程中断，再clone时报错
 

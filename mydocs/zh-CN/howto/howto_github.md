@@ -6,6 +6,15 @@ name: 加速github
 
 ​	当开发者经gitclone.com中转clone github上的代码库时，gitclone.com会对代码库进行mirror缓存，以后有开发者clone时，将直接从mirror缓存中获取数据，mirror将在每天夜间从github.com同步。
 
+**！！！特别需要注意的是，首先要设置git的超时参数，防止项目较大时，服务器端mirror时间过长导致git报504（超时）**
+
+```shell
+git config --global http.lowSpeedLimit 0
+git config --global http.lowSpeedTime 999999 
+```
+
+
+
 ## 方法1：修改URL
 
 ​	在原URL中嵌入gitclone.com，如：
