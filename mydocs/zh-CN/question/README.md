@@ -4,12 +4,9 @@ name: 常见问题
 
 # FAQ
 
-##### Q: 首次clone比较慢，开始无进度显示
+##### Q: 首次clone比较慢
 
-A：首次clone，首先从github.com  mirror ，这个过程结束后，客户端才会从mirror clone，才会有进度显示，所以有点卡顿的感觉，但以后的clone会直接出进度条，如果项目较大，clone报504错，请设置git超时参数：
-
-git config --global http.lowSpeedLimit 0
-git config --global http.lowSpeedTime 999999 
+A：首次clone，因为未建立起缓存，所以clone请求会被重定向到github.com，与直接从github.com clone的速度相当，在这个过程中，mirror被同步建立。如果项目较大耗时太长，可中断clone过程，删除本地已clone的文件夹。因为mirror是按depth=1的方式建立的，在短时间即可提供服务，所以过一会再试。
 
 ##### Q:当代码库较大时，clone过程中断，再clone时报错
 
@@ -18,3 +15,7 @@ A：客户端中断后，gitclone.com未中断，还在继续mirror，所以再c
 ##### Q:当git push时，报fatal: Authentication failed for ...
 
 A：gitclone.com不支持push，所以请将c:\users\用户名\\.gitconfig（linux在~/.gitconfig文件中）的url配置还原
+
+##### Q:git clone --depth=1同样可以提速，gitclone.com适合什么场景
+
+A: gitclone.com建立永久mirror，适合项目被多次多人clone的场景，比如go get、团队clone同一项目，达到一次clone，永久提速的效果。
