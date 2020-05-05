@@ -34,15 +34,3 @@ git config --global http.lowSpeedTime 999999
 ## 方法3：镜像
 
 ​	使用https://gitclone.com/gogs/ 提供了代码库镜像功能。
-
-
-
-## 方法4：使用客户端
-
-​	从 https://github.com/git-cloner/gitcache/releases/download/v0.1/cgit-release.zip 下载cgit客户端，将对应的cgit.exe放到与git.exe相同的文件夹下。就可以直接用cgit加速了，如：
-
-​	cgit clone https://github.com/gogs/gogs
-
-​	cgit pull
-
-​	如需提交，请将.git/config中的remote "origin"项目改成原始的github.com URL即可
