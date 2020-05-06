@@ -66,6 +66,15 @@
 			alert("请使用更高版本的浏览器打开网页")
 			window.close()
 		}
+
+		// 根据操作系统语言类型重定向
+		if(navigator && navigator.language === "zh-CN") {
+			window.location.replace("https://www.gitclone.com/?lang=zh-CN");
+		}
+
+		if(navigator && navigator.language === "en-US") {
+			window.location.replace("https://www.gitclone.com/?lang=en-US");
+		}
 		</script>
 
 		<title>{% block title %}{{Title}}{% endblock %}</title>
