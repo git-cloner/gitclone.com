@@ -67,15 +67,15 @@
 			window.close()
 		}
 
-
-		let cookieStr = document.cookie
-		let index = cookieStr.indexOf("lang=")
-		if(index !== -1) {
-			let lang = cookieStr.slice(index+5,index+10)
-			if(lang !== navigator.language) {
-				window.location.replace(`https://www.gitclone.com/?lang=${navigator.language}`);
-			}
-		}
+		// 根据操作系统修改切换语言
+		// let cookieStr = document.cookie
+		// let index = cookieStr.indexOf("lang=")
+		// if(index !== -1) {
+		// 	let lang = cookieStr.slice(index+5,index+10)
+		// 	if(lang !== navigator.language) {
+		// 		window.location.replace(`https://www.gitclone.com/?lang=${navigator.language}`);
+		// 	}
+		// }
 		</script>
 
 		<title>{% block title %}{{Title}}{% endblock %}</title>
