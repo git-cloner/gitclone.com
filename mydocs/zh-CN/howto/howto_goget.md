@@ -7,6 +7,7 @@ name: 加速go get
 go get获取代码时，使用与git clone相同的方法，所以可以用以下方法：
 
 git config --global url."https://gitclone.com/".insteadOf https://
+export GOPROXY=https://goproxy.io
 
 然后正常go get即可
 
