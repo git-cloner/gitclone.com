@@ -6,7 +6,7 @@ name: Speed ​​up go get
 
 When go get code, it uses the same method as git clone, so you can use the following methods:
 
-git config --global url. "https://gitclone.com/" .insteadOf https: //
+git config --global url. "https://gitclone.com/" .insteadOf https: // <br>
 export GOPROXY=https://goproxy.io
 
 Then go get normal
