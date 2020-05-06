@@ -32,32 +32,32 @@
 		{% endif %}
 		<script src="/js/highlight-9.12.0.pack.js"></script>
 		<script>
-					// 获取浏览器内核
-		function getBrowser(n) {
-			var ua = navigator.userAgent.toLowerCase(),
-					s,
-					name = '',
-					ver = 0;
-			//探测浏览器
-			(s = ua.match(/msie ([\d.]+)/)) ? _set("ie", _toFixedVersion(s[1])):
-			(s = ua.match(/firefox\/([\d.]+)/)) ? _set("firefox", _toFixedVersion(s[1])) :
-			(s = ua.match(/chrome\/([\d.]+)/)) ? _set("chrome", _toFixedVersion(s[1])) :
-			(s = ua.match(/opera.([\d.]+)/)) ? _set("opera", _toFixedVersion(s[1])) :
-			(s = ua.match(/version\/([\d.]+).*safari/)) ? _set("safari", _toFixedVersion(s[1])) : 0;
-			function _toFixedVersion(ver, floatLength) {
-				ver = ('' + ver).replace(/_/g, '.');
-				floatLength = floatLength || 1;
-				ver = String(ver).split('.');
-				ver = ver[0] + '.' + (ver[1] || '0');
-				ver = Number(ver).toFixed(floatLength);
-				return ver;
-			}
-			function _set(bname, bver) {
-				name = bname;
-				ver = bver;
-			}
-			return (n == 'n' ? name : (n == 'v' ? ver : name + ver));
-		};
+			// 获取浏览器内核
+			function getBrowser(n) {
+				var ua = navigator.userAgent.toLowerCase(),
+						s,
+						name = '',
+						ver = 0;
+				//探测浏览器
+				(s = ua.match(/msie ([\d.]+)/)) ? _set("ie", _toFixedVersion(s[1])):
+				(s = ua.match(/firefox\/([\d.]+)/)) ? _set("firefox", _toFixedVersion(s[1])) :
+				(s = ua.match(/chrome\/([\d.]+)/)) ? _set("chrome", _toFixedVersion(s[1])) :
+				(s = ua.match(/opera.([\d.]+)/)) ? _set("opera", _toFixedVersion(s[1])) :
+				(s = ua.match(/version\/([\d.]+).*safari/)) ? _set("safari", _toFixedVersion(s[1])) : 0;
+				function _toFixedVersion(ver, floatLength) {
+					ver = ('' + ver).replace(/_/g, '.');
+					floatLength = floatLength || 1;
+					ver = String(ver).split('.');
+					ver = ver[0] + '.' + (ver[1] || '0');
+					ver = Number(ver).toFixed(floatLength);
+					return ver;
+				}
+				function _set(bname, bver) {
+					name = bname;
+					ver = bver;
+				}
+				return (n == 'n' ? name : (n == 'v' ? ver : name + ver));
+			};
 
 		var neihe = getBrowser("n")
 		var banben = getBrowser("v")
@@ -67,13 +67,14 @@
 			window.close()
 		}
 
-		// 根据操作系统语言类型重定向
-		if(navigator && navigator.language === "zh-CN") {
-			window.location.replace("https://www.gitclone.com/?lang=zh-CN");
-		}
 
-		if(navigator && navigator.language === "en-US") {
-			window.location.replace("https://www.gitclone.com/?lang=en-US");
+		let cookieStr = document.cookie
+		let index = cookieStr.indexOf("lang=")
+		if(index !== -1) {
+			let lang = cookieStr.slice(index+5,index+10)
+			if(lang !== navigator.language) {
+				window.location.replace(`https://www.gitclone.com/?lang=${navigator.language}`);
+			}
 		}
 		</script>
 
