@@ -1,42 +1,44 @@
 # robots.txt generated at http://tool.chinaz.com/robots/ 
 User-agent: Baiduspider
-Disallow: 
+Allow: /
 User-agent: Sosospider
-Disallow: 
+Allow: /
 User-agent: sogou spider
-Disallow: 
+Allow: /
 User-agent: YodaoBot
-Disallow: 
+Allow: /
 User-agent: Googlebot
-Disallow: 
+Allow: /
 User-agent: Bingbot
-Disallow: 
+Allow: /
 User-agent: Slurp
-Disallow: 
+Allow: /
 User-agent: Teoma
-Disallow: 
+Allow: /
 User-agent: ia_archiver
-Disallow: 
+Allow: /
 User-agent: twiceler
-Disallow: 
+Allow: /
 User-agent: MSNBot
-Disallow: 
+Allow: /
 User-agent: Scrubby
-Disallow: 
+Allow: /
 User-agent: Robozilla
-Disallow: 
+Allow: /
 User-agent: Gigabot
-Disallow: 
+Allow: /
 User-agent: googlebot-image
-Disallow: 
+Allow: /
 User-agent: googlebot-mobile
-Disallow: 
+Allow: /
 User-agent: yahoo-mmcrawler
-Disallow: 
+Allow: /
 User-agent: yahoo-blogs/v3.9
-Disallow: 
+Allow: /
 User-agent: psbot
-Disallow: 
+Allow: /
+User-agent: MJ12bot
+Disallow: /
 User-agent: *
-Disallow: 
+Disallow: /
 Sitemap: https://www.gitclone.com
