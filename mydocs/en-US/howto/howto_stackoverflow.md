@@ -2,6 +2,8 @@
 name: Speed ​​up stackoverflow
 ---
 
+# stackoverflow speed up
+
 Accelerate stackoverflow, usually we will install the plugin directly in the browser, here we recommend[ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN)
 
 For convenience, we directly give the installation method of Firfox and Chrome:

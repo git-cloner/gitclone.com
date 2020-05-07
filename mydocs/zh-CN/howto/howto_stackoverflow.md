@@ -2,6 +2,8 @@
 name: 加速stackoverflow
 ---
 
+# stackoverflow 加速
+
 加速stackoverflow,通常我们都会在浏览器直接安装插件，这里我们推荐[ReplaceGoogleCDN](https://github.com/justjavac/ReplaceGoogleCDN)
 
 为了方便起见，我们直接给出Firfox和Chrome的安装方法：
