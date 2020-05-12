@@ -111,6 +111,25 @@
 		</div>
 	</div>
 
+
+	<div class="ui vertical stripe segment" style="flex: 0;">
+		<div class="ui aligned stackable three column grid container" >
+			<div style="font-size: 2.5em;font-weight: bold;text-align:center;padding-bottom: 30px;">{{Tr(Lang, "home.temp_code11")}}</div>
+			<table class="ui blue table">
+				<thead>
+					<tr>
+						<th>{{Tr(Lang, "home.node_name")}}</th>
+						<th>{{Tr(Lang, "home.node_ip")}}</th>
+						<th>{{Tr(Lang, "home.node_time")}}</th>
+						<th>{{Tr(Lang, "home.node_id")}}</th>
+					</tr>
+				</thead>
+				<tbody id="nodetbody">
+				</tbody>
+			</table>
+		</div>
+	</div>
+
 	<div class="ui vertical stripe segment" style="flex: 2;">
 		<div class="ui aligned stackable three column grid container">
 			<div class="column">
@@ -153,6 +172,54 @@
 		.catch(function(error) {
 			console.log(error)
 		})
+
+
+		Date.prototype.format = function(fmt) {
+			var o = {
+				"M+" : this.getMonth()+1,                 //月份
+				"d+" : this.getDate(),                    //日
+				"h+" : this.getHours(),                   //小时
+				"m+" : this.getMinutes(),                 //分
+				"s+" : this.getSeconds(),                 //秒
+				"q+" : Math.floor((this.getMonth()+3)/3), //季度
+				"S"  : this.getMilliseconds()             //毫秒
+			};
+			if(/(y+)/.test(fmt)) {
+				fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+			}
+			for(var k in o) {
+					if(new RegExp("("+ k +")").test(fmt)){
+							fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+					}
+			}
+			return fmt; 
+		}
+
+		// 获取节点信息
+		let nodeData = [
+			{ moniker: "ubuntu-virtual-machine1", address: "172.16.62.48:26657", lastTime: new Date().format("yyyy-MM-dd hh:mm:ss"), id: "c8ca96ca75eaeb37791f910d5430a1fb93bd9d61"},
+			{ moniker: "ubuntu-virtual-machine2", address: "172.16.62.49:26657", lastTime: new Date().format("yyyy-MM-dd hh:mm:ss"), id: "9g9n2hhu5ghg563u2gnf910d5430a1fb93bd9d61"},
+			{ moniker: "ubuntu-virtual-machine3", address: "172.16.62.50:26657", lastTime: new Date().format("yyyy-MM-dd hh:mm:ss"), id: "8t4t26d9svdfty1g969d7t1vfg59e7t4d45fd68t"},
+			{ moniker: "ubuntu-virtual-machine4", address: "172.16.62.51:26657", lastTime: new Date().format("yyyy-MM-dd hh:mm:ss"), id: "8s4t16d1f9dt4d45f4t55w54y5hui4h5m1h555ll"}
+		]
+
+		let tbody = document.getElementById("nodetbody")
+		for (let i = 0; i < nodeData.length; i++) {
+			let tr = document.createElement("tr")
+			let td1 = document.createElement("td")
+			td1.innerHTML = nodeData[i].moniker
+			tr.appendChild(td1)
+			let td2 = document.createElement("td")
+			td2.innerHTML = nodeData[i].address
+			tr.appendChild(td2)
+			let td3 = document.createElement("td")
+			td3.innerHTML = nodeData[i].lastTime
+			tr.appendChild(td3)
+			let td4 = document.createElement("td")
+			td4.innerHTML = nodeData[i].id
+			tr.appendChild(td4)
+			tbody.appendChild(tr)
+		}
 	</script>
 
  <!-- <div class="ui vertical stripe segment">
