@@ -201,7 +201,7 @@
 
 		axios({
 			method: 'get',
-			url: "https://111.51.8.199:22006/net_info"
+			url: "http://111.51.8.199:22006/net_info"
 		})
 		.then(function(res){
 			nodeData = res.data.result.peers
@@ -228,7 +228,7 @@
 		})
 		axios({
 			method: 'get',
-			url: "https://111.51.8.199:22006/status"
+			url: "http://111.51.8.199:22006/status"
 		})
 		.then(function(res){
 			let data = res.data.result
