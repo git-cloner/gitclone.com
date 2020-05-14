@@ -212,10 +212,14 @@
 				td1.innerHTML = nodeData[i]["node_info"]["moniker"]
 				tr.appendChild(td1)
 				let td2 = document.createElement("td")
-				td2.innerHTML = nodeData[i]["remote_ip"]
+				let ip =nodeData[i]["remote_ip"]
+				ip = ip.replace(".10.",".**.")
+				td2.innerHTML = ip
 				tr.appendChild(td2)
 				let td3 = document.createElement("td")
-				td3.innerHTML = nodeData[i]["connection_status"]["SendMonitor"]["Start"].slice(0,10)
+				let time = nodeData[i]["connection_status"]["SendMonitor"]["Start"]
+				let timeYY = time.slice(0,10) + " "+  time.slice(11,19)
+				td3.innerHTML = timeYY
 				tr.appendChild(td3)
 				let td4 = document.createElement("td")
 				td4.innerHTML = nodeData[i]["node_info"]["id"]
@@ -226,6 +230,7 @@
 		.catch(function(error) {
 			console.log(error)
 		})
+
 		axios({
 			method: 'get',
 			url: "https://gitclone.com/tendermint/status"
@@ -237,11 +242,15 @@
 			let td1 = document.createElement("td")
 			td1.innerHTML = data["node_info"]["moniker"]
 			tr.appendChild(td1)
+
 			let td2 = document.createElement("td")
-			td2.innerHTML = "192.168.10.54"
+			td2.innerHTML = "192.168.**.54"
 			tr.appendChild(td2)
+
 			let td3 = document.createElement("td")
-			td3.innerHTML = data["sync_info"]["latest_block_time"].slice(0,10)
+			let time = data["sync_info"]["latest_block_time"]
+			let timeYY = time.slice(0,10) + " " +  time.slice(11,19)
+			td3.innerHTML = timeYY
 			tr.appendChild(td3)
 			let td4 = document.createElement("td")
 			td4.innerHTML = data["node_info"]["id"]
