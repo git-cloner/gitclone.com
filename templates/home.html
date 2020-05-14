@@ -197,6 +197,39 @@
 
 		// 获取节点信息
 		let nodeData = []
+		var timeAll = ""
+
+
+		axios({
+			method: 'get',
+			url: "https://gitclone.com/tendermint/status"
+		})
+		.then(function(res){
+			let data = res.data.result
+			let tbody = document.getElementById("nodetbody")
+			let tr = document.createElement("tr")
+			let td1 = document.createElement("td")
+			td1.innerHTML = data["node_info"]["moniker"]
+			tr.appendChild(td1)
+
+			let td2 = document.createElement("td")
+			td2.innerHTML = "192.168.**.54"
+			tr.appendChild(td2)
+
+			let td3 = document.createElement("td")
+			let time = data["sync_info"]["latest_block_time"]
+			let timeYY = new Date(time).format("yyyy-MM-dd hh:mm:ss")
+			timeAll = timeYY
+			td3.innerHTML = timeYY
+			tr.appendChild(td3)
+			let td4 = document.createElement("td")
+			td4.innerHTML = data["node_info"]["id"]
+			tr.appendChild(td4)
+			tbody.appendChild(tr)
+		})
+		.catch(function(error) {
+			console.log(error)
+		})
 
 
 		axios({
@@ -217,45 +250,15 @@
 				td2.innerHTML = ip
 				tr.appendChild(td2)
 				let td3 = document.createElement("td")
-				let time = nodeData[i]["connection_status"]["SendMonitor"]["Start"]
-				let timeYY = time.slice(0,10) + " "+  time.slice(11,19)
-				td3.innerHTML = timeYY
+				// let time = nodeData[i]["connection_status"]["SendMonitor"]["Start"]
+				// let timeYY = time.slice(0,10) + " "+  time.slice(11,19)
+				td3.innerHTML = timeAll
 				tr.appendChild(td3)
 				let td4 = document.createElement("td")
 				td4.innerHTML = nodeData[i]["node_info"]["id"]
 				tr.appendChild(td4)
 				tbody.appendChild(tr)
 			}
-		})
-		.catch(function(error) {
-			console.log(error)
-		})
-
-		axios({
-			method: 'get',
-			url: "https://gitclone.com/tendermint/status"
-		})
-		.then(function(res){
-			let data = res.data.result
-			let tbody = document.getElementById("nodetbody")
-			let tr = document.createElement("tr")
-			let td1 = document.createElement("td")
-			td1.innerHTML = data["node_info"]["moniker"]
-			tr.appendChild(td1)
-
-			let td2 = document.createElement("td")
-			td2.innerHTML = "192.168.**.54"
-			tr.appendChild(td2)
-
-			let td3 = document.createElement("td")
-			let time = data["sync_info"]["latest_block_time"]
-			let timeYY = time.slice(0,10) + " " +  time.slice(11,19)
-			td3.innerHTML = timeYY
-			tr.appendChild(td3)
-			let td4 = document.createElement("td")
-			td4.innerHTML = data["node_info"]["id"]
-			tr.appendChild(td4)
-			tbody.appendChild(tr)
 		})
 		.catch(function(error) {
 			console.log(error)
