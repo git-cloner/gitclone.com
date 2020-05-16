@@ -167,7 +167,8 @@
 		})
 		.then(function(res){
 			var count = res.data.count
-			document.getElementById("dongtai").innerHTML = ` ${count} `
+			var nodes = res.data.nodes
+			document.getElementById("dongtai").innerHTML = ` ${count} ($(nodes))`
 		})
 		.catch(function(error) {
 			console.log(error)
