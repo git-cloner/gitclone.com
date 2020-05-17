@@ -4,7 +4,7 @@ name: Speed ​​up github
 
 # github clone acceleration
 
-When the developer transfers the code base on clone github via gitclone.com, gitclone.com will mirror the code base. In the future, if there is a developer clone, the data will be directly obtained from the mirror cache. github.com synchronization.
+When the developer transfers the repository on clone github via gitclone.com, gitclone.com will mirror the repository. In the future, if there is a developer clone, the data will be directly obtained from the mirror cache. github.com synchronization.
 
 **! ! ! It is particularly important to note that the git timeout parameter must be set first to prevent git from reporting a 504 (timeout) on the server side when the mirror on the server side is too long**
 
@@ -33,4 +33,4 @@ This command will modify **c: \ users \ user name \\. Gitconfig**, the configura
 
 ## Method 3: Mirroring
 
-Use https://gitclone.com/gogs/ to provide the code base mirroring function.
+Use https://gitclone.com/gogs/ to provide the repository mirroring function.

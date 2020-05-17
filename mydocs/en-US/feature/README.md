@@ -18,7 +18,7 @@ git clone https://gitclone.com/github.com/gogs/gogs.git
 
 **The more users, the faster the clone**
 
-​	gitclone.com has cached the code base with star> 10000 on github.com, and has started to cache the star> 3000 code base. For the uncached code base, developers only need to clone through gitclone.com A permanent cache will be established, and other developers will use the cache when cloning. The more developers use it, the greater the cache hit rate and the faster the clone.
+​	gitclone.com has cached the repository with star> 10000 on github.com, and has started to cache the star> 3000 repository. For the uncached repository, developers only need to clone through gitclone.com A permanent cache will be established, and other developers will use the cache when cloning. The more developers use it, the greater the cache hit rate and the faster the clone.
 
 **Multiple ways to support acceleration**
 
@@ -42,7 +42,7 @@ cgit clone https://github.com/gogs/gogs
 
 **Managed repository, support mirroring from github**
 
-​	Use gitclone.com's managed repository image. Gitclone.com deploys a set of gogs open source code hosting system. Developers can use https://gitclone.com/gogs/ to mirror the code base from github after registering and logging in. The advantage is that it can be Browse the code online as on github (but faster).
+​	Use gitclone.com's managed repository image. Gitclone.com deploys a set of gogs open source code hosting system. Developers can use https://gitclone.com/gogs/ to mirror the repository from github after registering and logging in. The advantage is that it can be Browse the code online as on github (but faster).
 
 **Speed up common developer websites**
 
