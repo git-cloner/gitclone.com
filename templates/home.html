@@ -168,7 +168,8 @@
 		.then(function(res){
 			var count = res.data.count
 			var nodes = res.data.nodes
-			document.getElementById("dongtai").innerHTML = ` ${count} ($(nodes))`
+			var info = count + '(' + nodes + ')'
+			document.getElementById("dongtai").innerHTML = ` ${info} `
 		})
 		.catch(function(error) {
 			console.log(error)
