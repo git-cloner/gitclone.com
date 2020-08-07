@@ -19,3 +19,7 @@ A：gitclone.com不支持push，所以请将c:\users\用户名\\.gitconfig（lin
 ##### Q:git clone --depth=1同样可以提速，gitclone.com适合什么场景
 
 A: gitclone.com建立永久mirror，适合项目被多次多人clone的场景，比如go get、团队clone同一项目，达到一次clone，永久提速的效果。
+
+##### Q：首次clone正常，第二次clone报fatal: protocol error: expected sha/ref, got 'shallow... ...
+
+A:git客户端版本低于2.0，如果之前无镜像，首次clone会重定向到github.com不影响，但有镜像后（git2.X建立），再用git1.x从镜像clone会报协议错，升级git客户端即可。

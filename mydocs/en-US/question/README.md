@@ -1,4 +1,3 @@
-
 ---
 name: FAQ
 ---
@@ -20,3 +19,7 @@ A: gitclone.com does not support push, so please restore the url configuration o
 ##### Q: git clone --depth = 1 can also speed up, what scene is suitable for gitclone.com
 
 A: gitclone.com establishes a permanent mirror, which is suitable for the scenario where the project is cloned by multiple people for many times, such as go get and team clone in the same project, to achieve the effect of clone once and permanently speed up.
+
+##### Q: The first clone is ok, the second clone reported fatal: protocol error: expected Sha / ref, got 'shallow... ...
+
+A: Git client version is lower than 2.0. If there is no mirror before, clone will be redirected to github.com , but when there is a mirror (established by git2. X), a protocol error will be reported from the mirror clone with GIT1. X, please update GIT client to 2.x.
