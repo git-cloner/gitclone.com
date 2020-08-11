@@ -23,3 +23,7 @@ A: gitclone.com建立永久mirror，适合项目被多次多人clone的场景，
 ##### Q：首次clone正常，第二次clone报fatal: protocol error: expected sha/ref, got 'shallow... ...
 
 A:git客户端版本低于2.0，如果之前无镜像，首次clone会重定向到github.com不影响，但有镜像后（git2.X建立），再用git1.x从镜像clone会报协议错，升级git客户端即可。
+
+##### Q：私有库不能通过gitclone.com进行clone
+
+A:私有库的clone需要经过身份认证，gitclone.com为了保证用户的数据安全性，不提供此功能。如果以前建立起缓存的公有库变更为私有库，gitclone.com会在每日同步时从缓存中移除此库。

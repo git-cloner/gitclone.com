@@ -23,3 +23,7 @@ A: gitclone.com establishes a permanent mirror, which is suitable for the scenar
 ##### Q: The first clone is ok, the second clone reported fatal: protocol error: expected Sha / ref, got 'shallow... ...
 
 A: Git client version is lower than 2.0. If there is no mirror before, clone will be redirected to github.com , but when there is a mirror (established by git2. X), a protocol error will be reported from the mirror clone with GIT1. X, please update GIT client to 2.x.
+
+##### Q: The private repository cannot be cloned through gitclone.com
+
+A: The clone of a private repository needs to be authenticated. In order to ensure the security of users' data, gitclone.com does not provide this function. If a public repository  that was previously cached is changed to a private repository , gitclone.com will remove this repository from the cache during daily synchronization.
