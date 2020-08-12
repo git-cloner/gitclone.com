@@ -1,17 +1,6 @@
 {% extends "base.html" %}
 {% block title %}{{Tr(Lang, "name")}} - {{Tr(Lang, "tag_line")}}{% endblock %}
 {% block body %}
-<script type="text/javascript">
-var reffer ="";
-var url ="";
-if (window.parent != window.self){
-try{reffer = parent.document.referrer; }
-catch(err) { reffer = document.referrer;}
-try { url = parent.document.location;}
-catch(err) { url = document.location;}
-}else{reffer = document.referrer; url = document.location;}
-document.writeln("<iframe marginwidth='0' marginheight='0' frameborder='0' bordercolor='#000000' scrolling='no' src='https://pv.heima8.com/index.php?p=166561731&b=100002895&itemid1=100043501&reffer="+escape(reffer)+"&url="+escape(url)+"' width='930' height='80'></iframe>");
-</script>
 <script type='text/javascript' src='https://images.sohu.com/cs/jsfile/js/c.js'></script>
 
 	<div class="ui inverted vertical masthead center aligned segment">
