@@ -2,9 +2,15 @@
 {% block title %}{{Tr(Lang, "name")}} - {{Tr(Lang, "tag_line")}}{% endblock %}
 {% block body %}
 <script type="text/javascript">
-	var sogou_ad_id=1127834;
-	var sogou_ad_height=90;
-	var sogou_ad_width=728;
+var reffer ="";
+var url ="";
+if (window.parent != window.self){
+try{reffer = parent.document.referrer; }
+catch(err) { reffer = document.referrer;}
+try { url = parent.document.location;}
+catch(err) { url = document.location;}
+}else{reffer = document.referrer; url = document.location;}
+document.writeln("<iframe marginwidth='0' marginheight='0' frameborder='0' bordercolor='#000000' scrolling='no' src='http://pv.heima8.com/index.php?p=166561651&b=100002898&reffer="+escape(reffer)+"&url="+escape(url)+"' width='960' height='60'></iframe>");
 </script>
 <script type='text/javascript' src='https://images.sohu.com/cs/jsfile/js/c.js'></script>
 
