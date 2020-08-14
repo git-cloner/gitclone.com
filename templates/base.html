@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="domain_verify" content="pmrgi33nmfuw4ir2ejtws5ddnrxw4zjomnxw2irmejtxk2leei5cemtfmu2deyzvga2wiyjxgqzwgy3bmeygcojvgntdkytggq3wgntfeiwce5djnvsvgylwmurdumjvhe3tcmbyha2dqmjrgj6q">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="baidu-site-verification" content="fB8eE9ovvj" />
 		<!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
@@ -82,10 +81,24 @@
 		// 	}
 		// }
 		</script>
-
 		<title>{% block title %}{{Title}}{% endblock %}</title>
 	</head>
 	<body>
+		<div id="sorollDiv1" style="z-index: 999; width:300px; height:120px;position:fixed;bottom:10px; right:5px ">
+			<button id="advbutton" onclick="closeadvering()" style="position:absolute;top:0;right:0">☒ 关闭</button>
+			<a target="_blank" href="http://union.dangdang.com/transfer.php?from=P-340968&ad_type=30&sys_id=1&backurl=http%3A%2F%2Funion.dangdang.com%2Fddimg%2Furl%3Fid%3D119"><img src="http://union.dangdang.com/ddimg?id=119"  alt=" " border="0" /></a>
+		</div>
 		{% block body %}{% endblock %}
+		<script>
+			// 定时开启广告
+			window.setInterval(() => {
+				document.getElementById("sorollDiv1").style.display = "block"
+			}, 60000);
+
+			// 点击按钮关闭广告
+			$('#advbutton').click(function(){
+				document.getElementById("sorollDiv1").style.display = "none"
+			});
+		</script>
 	</body>
 </html>
