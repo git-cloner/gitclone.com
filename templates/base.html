@@ -84,11 +84,12 @@
 		<title>{% block title %}{{Title}}{% endblock %}</title>
 	</head>
 	<body>
-		<div id="sorollDiv1" style="z-index: 999; width:300px; height:120px;position:fixed;bottom:10px; right:5px ">
+		{% block body %}{% endblock %}
+		<!-- 以下都是广告代码 -->
+		<!-- <div id="sorollDiv1" style="z-index: 999; width:300px; height:120px;position:fixed;bottom:10px; right:5px ">
 			<button id="advbutton" onclick="closeadvering()" style="position:absolute;top:0;right:0">☒ 关闭</button>
 			<a target="_blank" href="http://union.dangdang.com/transfer.php?from=P-340968&ad_type=30&sys_id=1&backurl=http%3A%2F%2Funion.dangdang.com%2Fddimg%2Furl%3Fid%3D119"><img src="http://union.dangdang.com/ddimg?id=119"  alt=" " border="0" /></a>
 		</div>
-		{% block body %}{% endblock %}
 		<script>
 			// 定时开启广告
 			window.setInterval(() => {
@@ -98,7 +99,7 @@
 			// 点击按钮关闭广告
 			$('#advbutton').click(function(){
 				document.getElementById("sorollDiv1").style.display = "none"
-			});
+			}); -->
 		</script>
 	</body>
 </html>
