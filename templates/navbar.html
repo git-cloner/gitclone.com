@@ -1,7 +1,7 @@
 <div class="ui container">
   <div class="ui large secondary inverted menu">
   	{% for item in Navbar.Items %}
-      <a class="{% if item.Link == Link %}active{% endif %} item" href="{{item.Link}}" {% if item.Blank %}target="_blank"{% endif %}>
+      <a class="{% if item.Link == Link %}active{% endif %} item" href="{{item.Link}}" {% if item.Blank %}target="_blank"{% endif %} onclick="axios({method: 'get',url: '{{item.Stat}}'}).then(function(res){})">
         {% if item.Icon %}<i class="{{item.Icon}} icon"></i>{% endif %}
         {{Tr(Lang, item.Locale)}}
       </a>
