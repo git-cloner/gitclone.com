@@ -6,21 +6,82 @@
 	  {% include Page.NavbarTplPath %}
 
 	  <div class="ui text container">
-	    <img src="/img/favicon.ico" >
-	    <h1 class="ui inverted header">
-	      {{Tr(Lang, "home.title")}}
-	    </h1>
-			<h2>{{Tr(Lang, "home.tag_line")}}</h2>
-			<h2>
-				{{Tr(Lang, "home.temp_code1")}}
-				<span id="dongtai" style="color: #15bb0f;"></span>
-				{{Tr(Lang, "home.temp_code2")}}
-			</h2>
-			<h2>
-				<a href="https://www.gitclone.com/gogs/vipserver" onclick="axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/vipvisit/'}).then(function(res){})">
-					{{Tr(Lang, "home.temp_code3")}}
-				</a>
-			</h2>
+			<div class="home-title">
+				<img src="/img/favicon.ico" style="width:300px" >
+				<!-- <h1 style="margin-top: -10px;" class="ui inverted header">
+					{{Tr(Lang, "home.title")}}
+				</h1> -->
+			</div>
+			<style>
+				.home-title {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin-top: 30px;
+				}
+				.home-search-wrapper {
+					display: flex;
+					margin-top: 40px;
+				}
+				.home-input {
+					width: 600px;
+					height:50px;
+					border-radius:  10px 0px 0px 10px ;
+					padding-left: 20px;
+					outline: none;
+				}
+				.home-search {
+					width: 100px;
+					height: 50px;
+					text-align: center;
+					color: #ffffff;
+					background-color: #4e6ef2;
+					border-radius: 0px 10px 10px 0px;
+				}
+				.home-search:hover {
+					background-color: #4662d9;
+					color: #ffffff;
+					cursor: pointer;
+				}
+				.search-a {
+					line-height: 50px;
+					color: #ffffff!important
+				}
+				.hot-search {
+					margin-top: 15px;
+					width: 700px;
+					padding-left: 10px;
+					color: #ffffff;
+				}
+				.hot-search-item {
+					color: #ffffff;
+					margin: 0px 5px;
+				}
+				.introduce-part {
+					margin-top: 105px;
+					margin-bottom: 20px;
+				}
+			</style>
+			<!--输入框部分-->
+			<div class="home-search-wrapper">
+				<input id="home-input" class="home-input" value="" placeholder="请输入要搜索的克隆项目"/>
+				<div class="home-search" onclick="search()"><span class="search-a">搜索</span></div>
+			</div>
+			<div id="hot-search" class="hot-search">
+				<span class="hot-search-item">推荐:</span>
+			</div>
+
+			<!--介绍的部分-->
+			<div style="margin-bottom: -60px">
+				<div id="introduce-part" class="introduce-part">
+					<h2 style="line-height: 0.5rem;color:#ffffff">{{Tr(Lang, "home.tag_line")}}</h2>
+				</div>
+				<h2 style="margin-top: 20px;">
+					<a href="https://www.gitclone.com/gogs/vipserver" onclick="axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/vipvisit/'}).then(function(res){})">
+						{{Tr(Lang, "home.temp_code3")}}
+					</a>
+				</h2>
+			</div>
 	    <!-- <a class="ui huge primary button" href="{{Page.DocsBaseURL}}">{{Tr(Lang, "home.get_started")}} <i class="right arrow icon"></i></a> -->
 		</div>
 	</div>
@@ -114,7 +175,12 @@
 
 	<div class="ui vertical stripe segment" style="flex: 0;">
 		<div class="ui aligned stackable three column grid container" >
-			<div style="font-size: 2.5em;font-weight: bold;text-align:center;padding-bottom: 30px;">{{Tr(Lang, "home.temp_code11")}}</div>
+			<div style="font-size: 2.5em;font-weight: bold;text-align:center;padding-bottom: 30px;">
+				{{Tr(Lang, "home.temp_code11")}}
+				<span style="font-size: 18px;">({{Tr(Lang, "home.temp_code1")}}</span>
+				<span id="dongtai" style="color: #15bb0f;font-size: 18px;"></span>
+				<span style="font-size: 18px;">{{Tr(Lang, "home.temp_code2")}})</span>
+			</div>
 			<table class="ui blue table">
 				<thead>
 					<tr>
@@ -161,6 +227,56 @@
 	<script>
 		var tempRequestAddress = 'http://192.168.10.9:5000/gitcache/system/info'
 		var RequestAddress = 'https://gitclone.com/gitcache/system/info/'
+		var hotSearchDataURL = 'https://gitclone.com/gitcache/system/recommend/'
+
+		// 输入框相关
+		var homeInput = document.getElementById("home-input")
+		var homeIntroduce = document.getElementById("introduce-part")
+		function search() {
+			if (homeInput.value !== "") {
+				axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/search'}).then(function(res){
+					window.open(`https://www.gitclone.com/gogs/search/clonesearch?q=${homeInput.value}`,"_self")
+				})
+			}
+		}
+
+
+		// 获取热搜数据信息
+		axios({
+			method:'get',
+			url: hotSearchDataURL
+		}).then(function(res){
+			var rs = [
+				{name: "gitcache",path: "1"},
+				{name: "qa_common_codes",path: "1"},
+				{name: "shattered-pixel-dungeon",path: "1"},
+				{name: "deap",path: "1"},
+				{name: "from_coder_to_expert",path: "1"},
+				{name: "wechat-deleted-friends",path: "1"},
+				{name: "abigteam_server",path: "1"},
+				{name: "documents",path: "1"},
+				{name: "LOLBAS",path: "1"},
+				{name: "paddy-sketch-plugin",path: "1"},
+			]
+
+
+			if (Array.isArray(res.data)) {
+				var hotSearchDataNode = document.getElementById("hot-search")
+				res.data.map((item, index) => {
+					let tempNode = document.createElement("a")
+					tempNode.classList.add("ui","inverted", "button")
+					tempNode.innerHTML = item.name
+					tempNode.style.margin="2.5px 5px"
+					tempNode.style.fontSize="12px"
+					tempNode.style.fontWeight="normal"
+					tempNode.href = `https://www.gitclone.com/gogs/search/clonesearch?q=${item.path}`
+					hotSearchDataNode.appendChild(tempNode)
+				})
+			}
+		})
+
+
+
 		axios({
 			method: 'get',
 			url: RequestAddress
