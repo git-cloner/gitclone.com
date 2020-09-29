@@ -64,17 +64,17 @@
 			</style>
 			<!--输入框部分-->
 			<div class="home-search-wrapper">
-				<input id="home-input" class="home-input" value="" placeholder="请输入要搜索的克隆项目"/>
-				<div class="home-search" onclick="search()"><span class="search-a">搜索</span></div>
+				<input id="home-input" class="home-input" value="" placeholder="{{Tr(Lang, 'home.temp_code14')}}" />
+				<div class="home-search" onclick="search()"><span class="search-a">{{Tr(Lang, "home.temp_code13")}}</span></div>
 			</div>
 			<div id="hot-search" class="hot-search">
-				<span class="hot-search-item">推荐:</span>
+				<span class="hot-search-item">{{Tr(Lang, "home.temp_code12")}}:</span>
 			</div>
 
 			<!--介绍的部分-->
 			<div style="margin-bottom: -60px">
 				<div id="introduce-part" class="introduce-part">
-					<h2 style="line-height: 0.5rem;color:#ffffff">{{Tr(Lang, "home.tag_line")}}</h2>
+					<h2 style="color:#ffffff">{{Tr(Lang, "home.tag_line")}}</h2>
 				</div>
 				<h2 style="margin-top: 20px;">
 					<a href="https://www.gitclone.com/gogs/vipserver" onclick="axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/vipvisit/'}).then(function(res){})">
