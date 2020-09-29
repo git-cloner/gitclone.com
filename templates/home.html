@@ -7,7 +7,7 @@
 
 	  <div class="ui text container">
 			<div class="home-title">
-				<img src="/img/favicon.ico" style="width:300px" >
+				<img src="/img/title.ico" style="width:300px" >
 				<!-- <h1 style="margin-top: -10px;" class="ui inverted header">
 					{{Tr(Lang, "home.title")}}
 				</h1> -->
@@ -64,7 +64,7 @@
 			</style>
 			<!--输入框部分-->
 			<div class="home-search-wrapper">
-				<input id="home-input" class="home-input" value="" placeholder="{{Tr(Lang, 'home.temp_code14')}}" />
+				<input id="home-input" class="home-input" value="" placeholder="{{Tr(Lang, 'home.temp_code14')}}" autofocus/>
 				<div class="home-search" onclick="search()"><span class="search-a">{{Tr(Lang, "home.temp_code13")}}</span></div>
 			</div>
 			<div id="hot-search" class="hot-search">
@@ -229,6 +229,9 @@
 		var RequestAddress = 'https://gitclone.com/gitcache/system/info/'
 		var hotSearchDataURL = 'https://gitclone.com/gitcache/system/recommend/'
 
+
+
+
 		// 输入框相关
 		var homeInput = document.getElementById("home-input")
 		var homeIntroduce = document.getElementById("introduce-part")
@@ -240,6 +243,12 @@
 			}
 		}
 
+		// input绑定回车事件
+		$("#home-input").on("keydown",function(e) {
+			if(event.keyCode == "13") {
+				search()
+			}
+		});
 
 		// 获取热搜数据信息
 		axios({
