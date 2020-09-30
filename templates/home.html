@@ -13,54 +13,70 @@
 				</h1> -->
 			</div>
 			<style>
-				.home-title {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					margin-top: 80px;
-				}
-				.home-search-wrapper {
-					display: flex;
-					margin-top: 40px;
-				}
-				.home-input {
-					width: 600px;
-					height:50px;
-					border-radius:  10px 0px 0px 10px ;
-					padding-left: 20px;
-					outline: none;
-				}
-				.home-search {
-					width: 100px;
-					height: 50px;
-					text-align: center;
-					color: #ffffff;
-					background-color: #4e6ef2;
-					border-radius: 0px 10px 10px 0px;
-				}
-				.home-search:hover {
-					background-color: #4662d9;
-					color: #ffffff;
-					cursor: pointer;
-				}
-				.search-a {
-					line-height: 50px;
-					color: #ffffff!important
-				}
-				.hot-search {
-					margin-top: 15px;
-					width: 700px;
-					padding-left: 10px;
-					color: #ffffff;
-				}
-				.hot-search-item {
-					color: #ffffff;
-					margin: 0px 5px;
-				}
-				.introduce-part {
-					margin-top: 105px;
-					margin-bottom: 20px;
-				}
+.home-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 80px;
+}
+.home-search-wrapper {
+	display: flex;
+	margin-top: 40px;
+}
+.home-input {
+	padding-left: 20px;
+	border-radius: 10px 0 0 10px ;
+	width: 600px;
+	height: 50px;
+	outline: none;
+}
+.home-search {
+	border-radius: 0 10px 10px 0;
+	width: 100px;
+	height: 50px;
+	background-color: #4e6ef2;
+	text-align: center;
+	color: #fff;
+}
+.home-search:hover {
+	background-color: #4662d9;
+	cursor: pointer;
+	color: #fff;
+}
+.search-a {
+	line-height: 50px;
+	color: #fff!important;
+}
+.hot-search {
+	margin-top: 15px;
+	padding-left: 10px;
+	width: 700px;
+	color: #fff;
+}
+.hot-search-item {
+	margin: 0 5px;
+	color: #fff;
+}
+.introduce-part {
+	margin-top: 105px;
+	margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			</style>
 			<!--输入框部分-->
 			<div class="home-search-wrapper">
@@ -89,23 +105,55 @@
 
 	<div class="ui vertical stripe segment" style="flex: 2;">
 		<style>
-			@keyframes fadenum1 { /*设置内容由显示变为隐藏*/
-				0%{opacity: 0;}
-				0.0005%{opacity: 0;}
-				0.0025%{opacity: 1}
-				100%{opacity: 1;}
-			}
-			.fadenum1 {
-				animation: fadenum1 100000s infinite;
-			}
-			@keyframes fadenum { /*设置内容由显示变为隐藏*/
-				0%{opacity: 0;}
-				0.002%{opacity: 1}
-				100%{opacity: 1;}
-			}
-			.fadenum {
-				animation: fadenum 100000s infinite;
-			}
+@keyframes fadenum1 {
+	/*设置内容由显示变为隐藏*/
+	0% {
+		opacity: 0;
+	}
+	.0005% {
+		opacity: 0;
+	}
+	.0025% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.fadenum1 {
+	animation: fadenum1 100000s infinite;
+}
+@keyframes fadenum {
+	/*设置内容由显示变为隐藏*/
+	0% {
+		opacity: 0;
+	}
+	.002% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.fadenum {
+	animation: fadenum 100000s infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		</style>
 		<div class="ui aligned stackable two column grid container">
 			<div class="column fadenum">
@@ -239,6 +287,10 @@
 			if (homeInput.value !== "") {
 				axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/search'}).then(function(res){
 					window.open(`https://www.gitclone.com/gogs/search/clonesearch?q=${homeInput.value}`,"_self")
+				})
+			} else {
+				axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/search'}).then(function(res){
+					window.open(`https://www.gitclone.com/gogs/search/clonesearch`,"_self")
 				})
 			}
 		}
