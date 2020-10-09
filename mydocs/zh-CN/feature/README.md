@@ -27,7 +27,7 @@ git clone https://gitclone.com/github.com/gogs/gogs.git
 1、修改git配置
 
 ```
-git config --global url.“https://gitclone.com/".insteadOf https://
+git config --global url."https://gitclone.com/".insteadOf https://
 ```
 
 ​	然后正常执行clone命令即可，如git clone https://github.com/gogs/gogs.git 。优点是设置一次，以后正常clone，缺点是全局参数，影响到所有git命令，如要git push时要把参数还原。
