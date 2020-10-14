@@ -4,10 +4,10 @@ name: cgit client
 
 # cgit client speed clone
 
-Download cgit client from :
+Download cgit-release.zip from :
 
 ```shell
-https://github.com/git-cloner/gitcache/releases/download/v0.1/cgit-release.zip 
+https://github.com/git-cloner/gitcache/releases 
 ```
 
 Place the downloaded cgit.exe in a folder recognized by the command line. You can use cgit directly to accelerate, such as:
