@@ -13,19 +13,20 @@ git config --global http.lowSpeedLimit 0
 git config --global http.lowSpeedTime 999999
 ```
 
-
-
 ## Method 1: Modify the URL
 
 Embed gitclone.com in the original URL, such as:
 
+```shell
 Git clone https: //**gitclone.com/**github.com/gogs/gogs
+```
 
 If you need to update, you can use git pull (you need to wait for the mirror update on gitclone.com). When you need to submit the code, because gitclone.com does not support submission at this time, you can change the remote "origin" project in .git / config to the original github.com URL.
 
 ## Method 2: Modify git configuration
-
+```shell
 Git config --global url. "Https://gitclone.com/" .insteadOf https: //
+```
 
 Then normal clone is enough
 

@@ -4,9 +4,10 @@ name: 加速go get
 
 # go get 加速
 
-go get获取代码时，可以使用goproxy.io代理加速，用以下方法：
-
+go get获取代码时，可以使用 goproxy.io 代理加速，用以下方法：
+```shell
 export GOPROXY=https://goproxy.io
+```
 
 然后正常go get即可
 

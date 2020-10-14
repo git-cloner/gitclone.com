@@ -6,8 +6,9 @@ name: Speed ​​up go get
 
 When go get code, we can use goproxy.io to proxy, so you can use the following methods:
 
+```shell
 export GOPROXY=https://goproxy.io
-
+```
 Then go get normal
 
 This command will modify **c: \ users \ username \\. Gitconfig**, linux is in the ~ / .gitconfig file, if you need to submit the code, restore the url configuration in this file

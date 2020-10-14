@@ -10,7 +10,7 @@ A: For the first time clone, because the cache is not established, the clone req
 
 ##### Q: When the repository is large, the clone process is interrupted, and then an error is reported when clone
 
-A: After the client is interrupted, gitclone.com is not interrupted, and the mirror continues. Therefore, when you clone again, because you cannot return data to the client in the mirror process, you will be prompted: remote: git cache is updating ... ., please wait, please try again later.
+A: After the client is interrupted, gitclone.com is not interrupted, and the mirror continues. Therefore, when you clone again, because you cannot return data to the client in the mirror process, you will be prompted: `remote: git cache is updating ... ., please wait`, please try again later.
 
 ##### Q: When git push, report fatal: Authentication failed for ...
 
