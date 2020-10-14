@@ -8,17 +8,17 @@ name: feature
 
 **Speeding up git clone is extremely simple**
 
-​	The establishment of https://gitclone.com is just one way to solve the above problems. Through the clone action of the developer, the distributed cache of github is established, and the mirror function of github is provided to serve programmers. No need for tedious fork or import work, just change the clone command a few words (gitclone.com/ is added), you can reach the clone speed of 1.27M / s:
+​	The establishment of https://gitclone.com is just one way to solve the above problems. Through the clone action of the developer, the distributed cache of github is established, and the mirror function of github is provided to serve programmers. No need for tedious fork or import work, just change the clone command a few words (`gitclone.com/` is added), you can reach the clone speed of 1.27M / s:
 
 ```shell
 git clone https://gitclone.com/github.com/gogs/gogs.git
 ```
 
-​	Compared with the 20k / s speed of git clone https://github.com/gogs/gogs.git, it is almost two orders of magnitude worse.
+​Compared with the 20k / s speed of `git clone https://github.com/gogs/gogs.git`, it is almost two orders of magnitude worse.
 
 **The more users, the faster the clone**
 
-​	gitclone.com has cached the repository with star> 10000 on github.com, and has started to cache the star> 3000 repository. For the uncached repository, developers only need to clone through gitclone.com A permanent cache will be established, and other developers will use the cache when cloning. The more developers use it, the greater the cache hit rate and the faster the clone.
+gitclone.com has cached the repository with star> 10000 on github.com, and has started to cache the star> 3000 repository. For the uncached repository, developers only need to clone through gitclone.com A permanent cache will be established, and other developers will use the cache when cloning. The more developers use it, the greater the cache hit rate and the faster the clone.
 
 **Multiple ways to support acceleration**
 
@@ -26,15 +26,15 @@ git clone https://gitclone.com/github.com/gogs/gogs.git
 
 1. Modify the git configuration
 
-```
+```shell
 git config --global url."https://gitclone.com/".insteadOf https://
 ```
 
-​	Then just execute the clone command normally, such as git clone https://github.com/gogs/gogs.git. The advantage is to set it once, and then clone normally. The disadvantage is that the global parameters affect all git commands. If you want to git push, you need to restore the parameters.
+​	Then just execute the clone command normally, such as `git clone https://github.com/gogs/gogs.git`. The advantage is to set it once, and then clone normally. The disadvantage is that the global parameters affect all git commands. If you want to `git push`, you need to restore the parameters.
 
 2. Use the cgit client
 
-```
+```shell
 cgit clone https://github.com/gogs/gogs
 ```
 
@@ -50,8 +50,8 @@ gitclone.com also collected some stackoverflow.com and go get speedup for develo
 
 **Distributed broad participation mechanism**
 
-​	The github repository cache requires a lot of storage resources, and it is difficult to meet the storage needs of a single computing node, so gitclone.com has established a distributed system of 4 initial verification nodes, and also provides developers to add their own machines to cache resources.  With the gradual improvement of gitclone's open source ecosystem,We look forward to your establishment of the fifth cache node of gitclone.com!
+​ The github repository cache requires a lot of storage resources, and it is difficult to meet the storage needs of a single computing node, so gitclone.com has established a distributed system of 4 initial verification nodes, and also provides developers to add their own machines to cache resources.  With the gradual improvement of gitclone's open source ecosystem,We look forward to your establishment of the fifth cache node of gitclone.com!
 
 **Please add star**
 
-​	The developers of gitclone.com have open-sourced the gitcache (https://github.com/git-cloner/gitcache) and codechain (https://github.com/little51/codechain) used by the distributed cache.Please add star,thank you!
+​	The developers of gitclone.com have open-sourced the [gitcache](https://github.com/git-cloner/gitcache) and [codechain](https://github.com/little51/codechain) used by the distributed cache.Please add star,thank you!
