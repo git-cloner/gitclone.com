@@ -6,9 +6,7 @@ name: cgit 客户端
 
 下载cgit客户端	
 
-​	[cgit windows 64位](https://gitclone.com/cgit-release/x64/cgit.exe)
-
-​	[cgit windows 32位](https://gitclone.com/cgit-release/x32/cgit.exe)
+​	[cgit windows ](https://github.com/git-cloner/gitcache/releases/download/v0.1/cgit-release.zip)
 
 ​	将下载 的cgit.exe放到命令行可识别的文件夹下。就可以直接用cgit加速了，如：
 

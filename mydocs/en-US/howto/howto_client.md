@@ -6,9 +6,7 @@ name: cgit client
 
 Download cgit client
 
-[Cgit windows 64 bit] (https://gitclone.com/cgit-release/x64/cgit.exe)
-
-[Cgit windows 32 bit] (https://gitclone.com/cgit-release/x32/cgit.exe)
+[Cgit windows] (https://github.com/git-cloner/gitcache/releases/download/v0.1/cgit-release.zip)
 
 Place the downloaded cgit.exe in a folder recognized by the command line. You can use cgit directly to accelerate, such as:
 
