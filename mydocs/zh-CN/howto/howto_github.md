@@ -33,4 +33,15 @@ git clone https://**gitclone.com/**github.com/gogs/gogs
 
 ## 方法3：镜像
 
-​使用 https://gitclone.com/gogs/ 提供了代码库镜像功能。
+​使用 [https://gitclone.com/gogs/](https://gitclone.com/gogs/) 提供了代码库镜像功能。
+
+
+# 客户端
+程序发布在：[https://github.com/git-cloner/gitcache/releases](https://github.com/git-cloner/gitcache/releases)， 将下载的 cgit.exe 放到命令行可识别的文件夹下。命令如下：
+
+```shell
+cgit clone https://github.com/git-cloner/gitcache
+cgit pull
+```
+
+如需提交，请将.git/config中的`remote "origin"`项目改成原始的 github.com URL即可

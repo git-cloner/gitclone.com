@@ -8,7 +8,7 @@ name: feature
 
 **Speeding up git clone is extremely simple**
 
-​	The establishment of https://gitclone.com is just one way to solve the above problems. Through the clone action of the developer, the distributed cache of github is established, and the mirror function of github is provided to serve programmers. No need for tedious fork or import work, just change the clone command a few words (`gitclone.com/` is added), you can reach the clone speed of 1.27M / s:
+​	The establishment of [https://gitclone.com](https://gitclone.com) is just one way to solve the above problems. Through the clone action of the developer, the distributed cache of github is established, and the mirror function of github is provided to serve programmers. No need for tedious fork or import work, just change the clone command a few words (`gitclone.com/` is added), you can reach the clone speed of 1.27M / s:
 
 ```shell
 git clone https://gitclone.com/github.com/gogs/gogs.git
@@ -42,7 +42,7 @@ cgit clone https://github.com/gogs/gogs
 
 **Managed repository, support mirroring from github**
 
-​	Use gitclone.com's managed repository image. Gitclone.com deploys a set of gogs open source code hosting system. Developers can use https://gitclone.com/gogs/ to mirror the repository from github after registering and logging in. The advantage is that it can be Browse the code online as on github (but faster).
+​	Use gitclone.com's managed repository image. Gitclone.com deploys a set of gogs open source code hosting system. Developers can use [https://gitclone.com/gogs/](https://gitclone.com/gogs/) to mirror the repository from github after registering and logging in. The advantage is that it can be Browse the code online as on github (but faster).
 
 **Speed up common developer websites**
 

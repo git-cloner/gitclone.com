@@ -8,7 +8,7 @@ name: 功能特性
 
 **加速git clone极其简单**
 
-​https://gitclone.com 的建立，正是解决上述问题的一个途径，通过开发者的clone动作，建立起github的分布式缓存，并提供对github的镜像功能，为程序员服务。不需要繁琐的fork或导入工作，只需要将clone命令改几个字（`gitclone.com/`是增加的），就可以达到1.27M/s的clone速度：
+​[https://gitclone.com](https://gitclone.com) 的建立，正是解决上述问题的一个途径，通过开发者的clone动作，建立起github的分布式缓存，并提供对github的镜像功能，为程序员服务。不需要繁琐的fork或导入工作，只需要将clone命令改几个字（`gitclone.com/`是增加的），就可以达到1.27M/s的clone速度：
 
 ```shell
 git clone https://gitclone.com/github.com/gogs/gogs.git
@@ -42,7 +42,7 @@ cgit clone https://github.com/gogs/gogs
 
 **托管代码库，支持从github镜像**
 
-​使用 gitclone.com 的托管代码库镜像，gitclone.com 部署了一套gogs开源代码托管系统，开发者注册登录后就可使用 https://gitclone.com/gogs/ 从github镜像代码库，优点是可以像在github上一样在线浏览代码（但速度更快）。
+​使用 gitclone.com 的托管代码库镜像，gitclone.com 部署了一套gogs开源代码托管系统，开发者注册登录后就可使用 [https://gitclone.com/gogs/](https://gitclone.com/gogs/) 从github镜像代码库，优点是可以像在github上一样在线浏览代码（但速度更快）。
 
 **提速常用开发者网站**
 
