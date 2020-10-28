@@ -12,9 +12,13 @@ name: 提供github app下载
 ​`github app`使用的是最广泛的第三方`OAuth`登录方式，需要在登录的时候打开浏览器请求`Github`第三方授权地址，在手机默认浏览器不支持的情况下推荐使用`chrome`移动端浏览器。
 
 ## 2、安装
-使用浏览器中的扫一扫功能，扫描下方其中一个二维码安装：
+使用浏览器中的扫一扫功能，扫描下方其中一个二维码安装（或者直接点击二维码下方链接下载）：
 
 <img src="/img/github_app_download.png" style="width:400px" >
+
+<a style="margin-left: 70px;" href="https://www.gitclone.com/download/GitHub_1.3.1_apktrending.com.apk">下载地址1</a>
+<a style="margin-left: 130px;" href="https://www.gitclone.com/download/GitHub_v1.2.17_apkpure.com.apk">下载地址2</a>
+
 
 ## 3、登录教程
 

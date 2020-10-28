@@ -62,19 +62,37 @@
 	margin-bottom: 20px;
 }
 
+.introduce_wrapper {
+	width: 700px;
+	display: flex;
+}
+.introduce_gitclone_vip {
+	flex: 1;
+	background: #4e6ef2;
+	margin: 5px 5px;
+	padding: 10px 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.introduce_github_app {
+	flex: 1;
+	background: #4e6ef2;
+	margin: 5px 5px;
+	padding: 10px 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
+.introduce_github_link {
+	color:#1b1c1d;
+	font-size: large;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+.introduce_github_link:hover {
+	color:#ffffff;
+}
 
 
 			</style>
@@ -92,16 +110,18 @@
 				<div id="introduce-part" class="introduce-part">
 					<h2 style="color:#ffffff">{{Tr(Lang, "home.tag_line")}}</h2>
 				</div>
-				<h2 style="margin-top: 20px;">
-					<a href="https://www.gitclone.com/gogs/vipserver" onclick="axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/vipvisit/'}).then(function(res){})">
-						{{Tr(Lang, "home.temp_code3")}}
-					</a>
-				</h2>
-				<h2 style="margin-top: 20px;">
-					<a href="https://www.gitclone.com/docs/feature/github_app">
-						{{Tr(Lang, "home.temp_code15")}}
-					</a>
-				</h2>
+				<div class="introduce_wrapper">
+					<div class="introduce_gitclone_vip">
+						<a class="introduce_github_link" href="https://www.gitclone.com/gogs/vipserver" onclick="axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/vipvisit/'}).then(function(res){})">
+							{{Tr(Lang, "home.temp_code3")}}
+						</a>
+					</div>
+					<div class="introduce_github_app">
+						<a class="introduce_github_link" href="https://www.gitclone.com/docs/feature/github_app" onclick="axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/githubapp'}).then(function(res){})">
+							{{Tr(Lang, "home.temp_code15")}}
+						</a>
+					</div>
+			</div>
 			</div>
 	    <!-- <a class="ui huge primary button" href="{{Page.DocsBaseURL}}">{{Tr(Lang, "home.get_started")}} <i class="right arrow icon"></i></a> -->
 		</div>

@@ -12,7 +12,8 @@ The official APP of `github` is installed from `https://github.com/mobile`, and 
 ​`github app` uses the most widely used third-party `OAuth` login method. When logging in, you need to open the browser to request the `Github` third-party authorization address. It is recommended to use `chrome` Mobile browser if the phone's default browser does not support it. .
 
 ## 2、Installation
-Use the scan function in your browser to scan one of the QR codes below to install：
+Use the scan function in your browser to scan one of the QR codes below to install（
+Or click the link below the QR code to download）：
 
 <img src="/img/github_app_download.png" style="width:400px" >
 
