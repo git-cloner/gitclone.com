@@ -17,6 +17,9 @@ Or click the link below the QR code to download）：
 
 <img src="/img/github_app_download.png" style="width:400px" >
 
+<a style="margin-left: 70px;" href="https://www.gitclone.com/download/GitHub_1.3.1_apktrending.com.apk">download link1</a>
+<a style="margin-left: 130px;" href="https://www.gitclone.com/download/GitHub_v1.2.17_apkpure.com.apk">download link2</a>
+
 ## 3、Login Tutorial
 
 + First；Open `Github App`, click `SIGN IN` to log in
