@@ -84,13 +84,40 @@
 .introduce_github_link:hover {
 	color:#ffffff;
 }
+.breath_light {
+    opacity: 0.1;                                   /* 不透明度 */
+    overflow: hidden;                               /* 溢出隐藏 */
 
+    /* IE10、Firefox and Opera，IE9以及更早的版本不支持 */
+    animation-name: breath;                         /* 动画名称 */
+    animation-duration: 3s;                         /* 动画时长3秒 */
+    animation-timing-function: ease-in-out;         /* 动画速度曲线：以低速开始和结束 */
+    animation-iteration-count: infinite;            /* 播放次数：无限 */
+
+    /* Safari and Chrome */
+    -webkit-animation-name: breath;                 /* 动画名称 */
+    -webkit-animation-duration: 3s;                 /* 动画时长3秒 */
+    -webkit-animation-timing-function: ease-in-out; /* 动画速度曲线：以低速开始和结束 */
+    -webkit-animation-iteration-count: infinite;    /* 播放次数：无限 */
+}
+
+@keyframes breath {
+    from { opacity: 0.5; }                          /* 动画开始时的不透明度 */
+    50%  { opacity:   1; }                          /* 动画50% 时的不透明度 */
+    to   { opacity: 0.5; }                          /* 动画结束时的不透明度 */
+}
+
+@-webkit-keyframes breath {
+    from { opacity: 0.5; }                          /* 动画开始时的不透明度 */
+    50%  { opacity:   1; }                          /* 动画50% 时的不透明度 */
+    to   { opacity: 0.5; }                          /* 动画结束时的不透明度 */
+}
 
 			</style>
 			<!--输入框部分-->
 			<div class="home-search-wrapper">
-				<input id="home-input" class="home-input" value="" placeholder="{{Tr(Lang, 'home.temp_code14')}}" autofocus/>
-				<div class="home-search" onclick="search()"><span class="search-a">{{Tr(Lang, "home.temp_code13")}}</span></div>
+				<input id="home-input" class="home-input" placeholder="{{Tr(Lang, 'home.temp_code14')}}" autofocus/>
+				<div id="home-search" class="home-search" onclick="search()"><span class="search-a">{{Tr(Lang, "home.temp_code13")}}</span></div>
 			</div>
 			<div id="hot-search" class="hot-search">
 				<span class="hot-search-item">{{Tr(Lang, "home.temp_code12")}}:</span>
@@ -299,7 +326,16 @@
 		var hotSearchDataURL = 'https://gitclone.com/gitcache/system/recommend/'
 
 
-
+		// 根据网址query参数给输入框添加value默认值
+		if(location.search !== "" && location.origin==="https://gitclone.com/") {
+			let query_part = location.search
+			let query_search = query_part.slice(1)
+			let query_arr = query_search.split("=")
+			if(query_arr.length === 2 && query_arr[0] === "search") {
+				document.getElementById("home-input").value = query_arr[1]
+				document.getElementById("home-search").classList.add(["breath_light"])
+			}
+		}
 
 		// 输入框相关
 		var homeInput = document.getElementById("home-input")
