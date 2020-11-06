@@ -5,6 +5,7 @@
 	<div class="ui inverted vertical masthead center aligned segment">
 	  {% include Page.NavbarTplPath %}
 
+		<!-- 主题部分-->
 	  <div class="ui text container">
 			<div class="home-title">
 				<img src="/img/title.ico" style="width:300px" >
@@ -13,105 +14,106 @@
 				</h1> -->
 			</div>
 			<style>
-.home-title {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-top: 80px;
-}
-.home-search-wrapper {
-	display: flex;
-	margin-top: 40px;
-}
-.home-input {
-	padding-left: 20px;
-	border-radius: 10px 0 0 10px ;
-	width: 600px;
-	height: 50px;
-	outline: none;
-}
-.home-search {
-	border-radius: 0 10px 10px 0;
-	width: 100px;
-	height: 50px;
-	background-color: #4e6ef2;
-	text-align: center;
-	color: #fff;
-}
-.home-search:hover {
-	background-color: #4662d9;
-	cursor: pointer;
-	color: #fff;
-}
-.search-a {
-	line-height: 50px;
-	color: #fff!important;
-}
-.hot-search {
-	margin-top: 15px;
-	padding-left: 10px;
-	width: 700px;
-	color: #fff;
-}
-.hot-search-item {
-	margin: 0 5px;
-	color: #fff;
-}
-.introduce-part {
-	margin-top: 65px;
-	margin-bottom: 20px;
-}
+				.home-title {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin-top: 80px;
+				}
+				.home-search-wrapper {
+					display: flex;
+					margin-top: 40px;
+				}
+				.home-input {
+					padding-left: 20px;
+					border-radius: 10px 0 0 10px ;
+					width: 600px;
+					height: 50px;
+					outline: none;
+				}
+				.home-search {
+					border-radius: 0 10px 10px 0;
+					width: 100px;
+					height: 50px;
+					background-color: #4e6ef2;
+					text-align: center;
+					color: #fff;
+				}
+				.home-search:hover {
+					background-color: #4662d9;
+					cursor: pointer;
+					color: #fff;
+				}
+				.search-a {
+					line-height: 50px;
+					color: #fff!important;
+				}
+				.hot-search {
+					margin-top: 15px;
+					padding-left: 10px;
+					width: 700px;
+					color: #fff;
+				}
+				.hot-search-item {
+					margin: 0 5px;
+					color: #fff;
+				}
+				.introduce-part {
+					margin-top: 65px;
+					margin-bottom: 20px;
+				}
 
-.introduce_wrapper {
-	width: 700px;
-	display: flex;
-}
-.introduce_github_app {
-	flex: 1;
-	background: #6882ef;
-	margin: 5px 10px;
-	padding: 10px 10px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+				.introduce_wrapper {
+					width: 700px;
+					display: flex;
+				}
+				.introduce_github_app {
+					flex: 1;
+					background: #6882ef;
+					margin: 5px 10px;
+					padding: 10px 10px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					border-radius: 35px;
+				}
 
-.introduce_github_link {
-	color:#1b1c1d;
-	font-size: large;
-}
+				.introduce_github_link {
+					color:#1b1c1d;
+					font-size: large;
+				}
 
-.introduce_github_link:hover {
-	color:#ffffff;
-}
-.breath_light {
-    opacity: 0.1;                                   /* 不透明度 */
-    overflow: hidden;                               /* 溢出隐藏 */
+				.introduce_github_link:hover {
+					color:#ffffff;
+				}
+				.breath_light {
+						opacity: 0.1;                                   /* 不透明度 */
+						overflow: hidden;                               /* 溢出隐藏 */
 
-    /* IE10、Firefox and Opera，IE9以及更早的版本不支持 */
-    animation-name: breath;                         /* 动画名称 */
-    animation-duration: 3s;                         /* 动画时长3秒 */
-    animation-timing-function: ease-in-out;         /* 动画速度曲线：以低速开始和结束 */
-    animation-iteration-count: infinite;            /* 播放次数：无限 */
+						/* IE10、Firefox and Opera，IE9以及更早的版本不支持 */
+						animation-name: breath;                         /* 动画名称 */
+						animation-duration: 3s;                         /* 动画时长3秒 */
+						animation-timing-function: ease-in-out;         /* 动画速度曲线：以低速开始和结束 */
+						animation-iteration-count: infinite;            /* 播放次数：无限 */
 
-    /* Safari and Chrome */
-    -webkit-animation-name: breath;                 /* 动画名称 */
-    -webkit-animation-duration: 3s;                 /* 动画时长3秒 */
-    -webkit-animation-timing-function: ease-in-out; /* 动画速度曲线：以低速开始和结束 */
-    -webkit-animation-iteration-count: infinite;    /* 播放次数：无限 */
-}
+						/* Safari and Chrome */
+						-webkit-animation-name: breath;                 /* 动画名称 */
+						-webkit-animation-duration: 3s;                 /* 动画时长3秒 */
+						-webkit-animation-timing-function: ease-in-out; /* 动画速度曲线：以低速开始和结束 */
+						-webkit-animation-iteration-count: infinite;    /* 播放次数：无限 */
+				}
 
-@keyframes breath {
-    from { opacity: 0.5; }                          /* 动画开始时的不透明度 */
-    50%  { opacity:   1; }                          /* 动画50% 时的不透明度 */
-    to   { opacity: 0.5; }                          /* 动画结束时的不透明度 */
-}
+				@keyframes breath {
+						from { opacity: 0.5; }                          /* 动画开始时的不透明度 */
+						50%  { opacity:   1; }                          /* 动画50% 时的不透明度 */
+						to   { opacity: 0.5; }                          /* 动画结束时的不透明度 */
+				}
 
-@-webkit-keyframes breath {
-    from { opacity: 0.5; }                          /* 动画开始时的不透明度 */
-    50%  { opacity:   1; }                          /* 动画50% 时的不透明度 */
-    to   { opacity: 0.5; }                          /* 动画结束时的不透明度 */
-}
+				@-webkit-keyframes breath {
+						from { opacity: 0.5; }                          /* 动画开始时的不透明度 */
+						50%  { opacity:   1; }                          /* 动画50% 时的不透明度 */
+						to   { opacity: 0.5; }                          /* 动画结束时的不透明度 */
+				}
 
 			</style>
 			<!--输入框部分-->
@@ -133,6 +135,7 @@
 						{{Tr(Lang, "home.temp_code3")}}
 					</a>
 				</div>
+				<!-- 下载部分-->
 				<div class="introduce_wrapper">
 					<div class="introduce_github_app">
 						<a class="introduce_github_link" href="https://www.gitclone.com/docs/feature/github_app" onclick="axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/githubapp'}).then(function(res){})">
@@ -145,63 +148,60 @@
 						</a>
 					</div>
 				</div>
+				<div class="introduce_wrapper">
+					<div class="introduce_github_app">
+						<a class="introduce_github_link" href="https://www.gitclone.com/docs/feature/github_cli" onclick="axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/githubcli'}).then(function(res){})">
+							{{Tr(Lang, "home.temp_code22")}}
+						</a>
+					</div>
+					<div class="introduce_github_app">
+						<a class="introduce_github_link" href="https://www.gitclone.com/docs/feature/github_git" onclick="axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/githubgit'}).then(function(res){})">
+							{{Tr(Lang, "home.temp_code23")}}
+						</a>
+					</div>
+				</div>
 			</div>
 	    <!-- <a class="ui huge primary button" href="{{Page.DocsBaseURL}}">{{Tr(Lang, "home.get_started")}} <i class="right arrow icon"></i></a> -->
 		</div>
 	</div>
 
 
+	<!-- 快速上手和效果显著 -->
 	<div class="ui vertical stripe segment" style="flex: 2;">
 		<style>
-@keyframes fadenum1 {
-	/*设置内容由显示变为隐藏*/
-	0% {
-		opacity: 0;
-	}
-	.0005% {
-		opacity: 0;
-	}
-	.0025% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-.fadenum1 {
-	animation: fadenum1 100000s infinite;
-}
-@keyframes fadenum {
-	/*设置内容由显示变为隐藏*/
-	0% {
-		opacity: 0;
-	}
-	.002% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-.fadenum {
-	animation: fadenum 100000s infinite;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+			@keyframes fadenum1 {
+				/*设置内容由显示变为隐藏*/
+				0% {
+					opacity: 0;
+				}
+				.0005% {
+					opacity: 0;
+				}
+				.0025% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			.fadenum1 {
+				animation: fadenum1 100000s infinite;
+			}
+			@keyframes fadenum {
+				/*设置内容由显示变为隐藏*/
+				0% {
+					opacity: 0;
+				}
+				.002% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			.fadenum {
+				animation: fadenum 100000s infinite;
+			}
 		</style>
 		<div class="ui aligned stackable two column grid container">
 			<div class="column fadenum">
@@ -268,7 +268,43 @@
 		</div>
 	</div>
 
+	<!--嵌入镜像入口 -->
+	<!-- <div class="ui vertical stripe segment" style="flex: 0;">
+		<div class="ui aligned stackable  container" >
+			<div style="font-size: 2.5em;font-weight: bold;padding-bottom: 30px;">
+				{{Tr(Lang, "home.temp_code17")}}
+			</div>
+			<p></p>
+			<div>
+				<p>{{Tr(Lang, "home.temp_code18")}}</p>
+				<div
+					style="
+						width: 100%;
+						flex: 1;
+						background-color: #1b1c1d;
+						color: rgba(255,255,255,.9);
+						padding:5px 15px;
+						margin-top: 10px;
+						padding-bottom: 10px;
+						box-shadow: 1px 1px 5px 3px #888888;
+						border-radius: 10px;
+						position: relative
+					"
+				>
+					<div class="ui top right attached label">Markdown</div>
+					<p style="line-height: 1.5em;"><span style="color:rgba(255,255,255,.9)">## {{Tr(Lang, "home.temp_code19")}}</span></p>
+					<p style="line-height: 1.5em;"><span style="color:rgba(255,255,255,.9)">{{Tr(Lang, "home.temp_code20")}}</span></p>
+					<p style="line-height: 1.5em;"><span style="color:rgba(255,255,255,.9)">{{Tr(Lang, "home.temp_code21")}}</span></p>
+				</div>
+			</div>
+			</div>
 
+
+		</div>
+	</div> -->
+
+
+	<!-- 缓存节点模块 -->
 	<div class="ui vertical stripe segment" style="flex: 0;">
 		<div class="ui aligned stackable three column grid container" >
 			<div style="font-size: 2.5em;font-weight: bold;text-align:center;padding-bottom: 30px;">
@@ -291,6 +327,7 @@
 			</table>
 		</div>
 	</div>
+
 
 	<div class="ui vertical stripe segment" style="flex: 2;">
 		<div class="ui aligned stackable three column grid container">
@@ -320,6 +357,7 @@
 			</div>
 		</div>
 	</div>
+
 	<script>
 		var tempRequestAddress = 'http://192.168.10.9:5000/gitcache/system/info'
 		var RequestAddress = 'https://gitclone.com/gitcache/system/info/'
@@ -327,7 +365,12 @@
 
 
 		// 根据网址query参数给输入框添加value默认值
-		if(location.search !== "" && location.origin==="https://gitclone.com") {
+		// 1. 一种情况是通过携带参数
+		var letHasQuery = location.search !== "" && location.origin==="https://gitclone.com"
+		// 2. 一种是通过检测上个github网页
+		var lastWebPageAddress = document.referrer != ""
+
+		if(letHasQuery || lastWebPageAddress) {
 			let query_part = location.search
 			let query_search = query_part.slice(1)
 			let query_arr = query_search.split("=")
