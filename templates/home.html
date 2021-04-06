@@ -382,11 +382,18 @@
 		// 请求readme，检测广告是否存在
 		function checkReadme(path) {
 			let proUrl = `https://gitclone.com/gitcache/${path.slice(8)}/git-upload-pack`
+			//let devUrl = `http://localhost:5000/${path.slice(8)}/git-upload-pack`
 			axios({method:'post', url: proUrl}).then(function(res) {
-				if(res.status === 200) {
+				let hasCache = res.headers["cache-control"] === "no-cache, max-age=0, must-revalidate, no-cache, max-age=0, must-revalidate"
+				if(res.status === 200 && hasCache) {
 					showMask(
 						`正在为 ${path} 添加镜像，请稍后重新搜索，查看结果`,
 						`Adding a mirror for ${path}, please search again in ten minutes to see the results`
+					)
+				} else {
+					showMask(
+						"该项目已存在于gogs镜像当中，请勿重复添加",
+						"The project already exists in the gogs mirror, please do not add it repeatedly"
 					)
 				}
 			}).catch(err => {
@@ -429,25 +436,7 @@
 				let ismirrorAddressRight = mirrorAddress.test(homeInput.value)
 				// 地址正确就到镜像中查询项目是否存在
 				if(ismirrorAddressRight) {
-					axios({
-						method: 'GET',
-						url: `https://gitclone.com/gogs/api/v1/users/getRepoExist?path=${homeInput.value}`,
-					}).then(function(res){
-						if(res.status !== 200) {
-							// 不是200,说明需要添加
-							checkReadme(homeInput.value)
-						} else {
-							// 是200说明已经存在该项目，向用户报错误
-							showMask(
-								"该项目已存在于gogs镜像当中，请勿重复添加",
-								"The project already exists in the gogs mirror, please do not add it repeatedly"
-							)
-						}
-					}).catch(function(err){
-						console.log("catch 到了gogs的错误")
-						console.log(err)
-						checkReadme(homeInput.value)
-					})
+					checkReadme(homeInput.value)
 				} else {
 					// 地址不正确就向用户报错误
 					showMask(
