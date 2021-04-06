@@ -5,23 +5,19 @@
 	<div class="ui inverted vertical masthead center aligned segment">
 	  {% include Page.NavbarTplPath %}
 
-		<!--遮罩层-->
+		<!-- 错误提示遮罩层 -->
 		<div class="ui basic modal">
 			<div class="ui icon header">
 				<i class="archive icon"></i>
-				Archive Old Messages
+				<span id="mask-title"></span>
 			</div>
-			<div class="content">
-				<p>Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
+			<div class="content" style="display: flex; justify-content: center;align-items: center;">
+				<span id="mask-tip"></span>
 			</div>
 			<div class="actions">
-				<div class="ui red basic cancel inverted button">
-					<i class="remove icon"></i>
-					No
-				</div>
 				<div class="ui green ok inverted button">
 					<i class="checkmark icon"></i>
-					Yes
+					<span id="mask-yes"></span>
 				</div>
 			</div>
 		</div>
@@ -53,6 +49,7 @@
 					width: 500px;
 					height: 50px;
 					outline: none;
+					margin-right: 5px;
 				}
 				.home-search {
 					border-radius: 10px 10px 10px 10px;
@@ -293,42 +290,6 @@
 		</div>
 	</div>
 
-	<!--嵌入镜像入口 -->
-	<!-- <div class="ui vertical stripe segment" style="flex: 0;">
-		<div class="ui aligned stackable  container" >
-			<div style="font-size: 2.5em;font-weight: bold;padding-bottom: 30px;">
-				{{Tr(Lang, "home.temp_code17")}}
-			</div>
-			<p></p>
-			<div>
-				<p>{{Tr(Lang, "home.temp_code18")}}</p>
-				<div
-					style="
-						width: 100%;
-						flex: 1;
-						background-color: #1b1c1d;
-						color: rgba(255,255,255,.9);
-						padding:5px 15px;
-						margin-top: 10px;
-						padding-bottom: 10px;
-						box-shadow: 1px 1px 5px 3px #888888;
-						border-radius: 10px;
-						position: relative
-					"
-				>
-					<div class="ui top right attached label">Markdown</div>
-					<p style="line-height: 1.5em;"><span style="color:rgba(255,255,255,.9)">## {{Tr(Lang, "home.temp_code19")}}</span></p>
-					<p style="line-height: 1.5em;"><span style="color:rgba(255,255,255,.9)">{{Tr(Lang, "home.temp_code20")}}</span></p>
-					<p style="line-height: 1.5em;"><span style="color:rgba(255,255,255,.9)">{{Tr(Lang, "home.temp_code21")}}</span></p>
-				</div>
-			</div>
-			</div>
-
-
-		</div>
-	</div> -->
-
-
 	<!-- 缓存节点模块 -->
 	<div class="ui vertical stripe segment" style="flex: 0;">
 		<div class="ui aligned stackable three column grid container" >
@@ -391,18 +352,13 @@
 		var hotSearchDataURL = 'https://gitclone.com/gitcache/system/recommend/'
 
 
-		// 根据网址query参数给输入框添加value默认值
-		// 1. 一种情况是通过携带参数
-		var letHasQuery = location.search !== "" && location.origin==="https://gitclone.com"
-		// 2. 一种是通过检测上个github网页
-		var lastWebPageAddress = document.referrer != ""
+		// 通过检测上个github网页
+		var lastWebPageAddress = document.referrer !== ""
 
-		if(letHasQuery || lastWebPageAddress) {
-			let query_part = location.search
-			let query_search = query_part.slice(1)
-			let query_arr = query_search.split("=")
-			if(query_arr.length === 2 && query_arr[0] === "search") {
-				document.getElementById("home-input").value = query_arr[1]
+		if(lastWebPageAddress) {
+			let mirrorAddressRep = /https:\/\/github.com\/*\/*/
+			if (mirrorAddressRep.test(document.referrer)) {
+				document.getElementById("home-input").value = document.referrer
 				document.getElementById("home-search").classList.add(["breath_light"])
 			}
 		}
@@ -423,24 +379,131 @@
 		}
 
 
+		// 请求readme，检测广告是否存在
+		function checkReadme(path) {
+			// 拼接github地址
+			let githubRepoReadmeApiAddress = `https://api.github.com/repos${path.slice(18)}/readme?access_token=eb51f91b302d58dc5d0e05429cc889a27468977f`
+			// 根据返回结果判断，是否包含我们需要的广告
+			axios({method: 'get',url: githubRepoReadmeApiAddress}).then(function(res){
+				// console.log(res)
+				if(res.status === 200 && res.data && res.data.content !== "") {
+					// 判断是否有广告
+					let isHasAdvertis =  decodeURIComponent(escape(atob(res.data.content))).indexOf(`## 快速克隆
+
+<a href='https://gitclone.com'><img src='https://gitclone.com/img/title.ico' style='width:300px;'/></a>`)
+					if(isHasAdvertis === -1) {
+						// 告诉用户怎么添加广告
+						showAdvertising()
+					} else {
+						// readme当中包含广告就告诉用户正在添加镜像
+						// 发送添加mirror的请求
+						axios({method:'get', url: `https://gitclone.com/gitcache/mirror/${path.slice(8)}`}).then(function(res) {
+							if(res.status === 200) {
+								showMask(
+									`正在为 ${path} 添加镜像，请在十分钟后重新搜索，查看结果`,
+									`Adding a mirror for ${path}, please search again in ten minutes to see the results`
+								)
+							}
+						}).catch(err => {
+							showMask(
+								`${path}添加镜像失败，请检查网络或者联系管理员之后重试`,
+								`${path}failed to add mirror, please check the network or contact the administrator and try again`
+							)
+						})
+					}
+				}
+			}).catch(err => {
+				showMask(
+					"请仔细检查输入地址是否正确，或者稍后再试",
+					"Please double check that the address entered is correct, or try again later"
+				)
+			})
+		}
+
+		// 展示错误提示框
+		function showMask(zhStr,enStr) {
+			let maskTitle = document.getElementById("mask-title")
+			let maskTip= document.getElementById("mask-tip")
+			let maskYes = document.getElementById("mask-yes")
+
+			let lastChildrenOfmaskTip = maskTip.lastChild
+			if(lastChildrenOfmaskTip) {
+				maskTip.removeChild(lastChildrenOfmaskTip)
+			}
+
+			let zh = document.cookie.indexOf("lang=zh-CN")!==-1
+			maskTitle.innerText = zh ? "温馨提示": "Tips"
+			maskYes.innerText = "yes"
+			if(typeof zhStr === "string" && typeof enStr === "string") {
+				maskTip.innerText = zh? zhStr: enStr
+			} else {
+				maskTip.appendChild(zh? zhStr: enStr)
+			}
+			$('.ui.basic.modal')
+				.modal('show')
+			;
+		}
+
+
+		// 展示如何添加广告框
+		function showAdvertising() {
+			let ppZh = document.createElement("span")
+			let spZh = document.createElement("span")
+			let aaZh = document.createElement("a")
+			let ppEh = document.createElement("span")
+			let spEh = document.createElement("span")
+			let aaEh = document.createElement("a")
+
+			spZh.innerText = "尊敬的用户，您需要在项目当中添加快速克隆入口之后才能完成添加镜像，具体操作参照"
+			aaZh.innerText = "添加镜像"
+			aaZh.href = "https://gitclone.com/docs/feature/addmirror"
+			aaZh.setAttribute("target","_blank")
+			ppZh.appendChild(spZh)
+			ppZh.appendChild(aaZh)
+
+			spEh.innerText = "Dear users, you need to add a quick clone entry to the project to complete the addition of mirroring. Refer to the specific operation"
+			aaEh.innerText = "Add Mirror"
+			aaEh.href = "https://gitclone.com/docs/feature/addmirror"
+			aaEh.setAttribute("target","_blank")
+			ppEh.appendChild(spEh)
+			ppEh.appendChild(aaEh)
+
+			showMask(ppZh,ppEh)
+		}
+
 		// 添加镜像
 		function addmirror() {
 			// 检查输入地址的正确性
 			var mirrorAddress = /https:\/\/github.com\/*\/*/
 			if (homeInput.value !== "") {
 				let ismirrorAddressRight = mirrorAddress.test(homeInput.value)
+				// 地址正确就到镜像中查询项目是否存在
 				if(ismirrorAddressRight) {
 					axios({
 						method: 'GET',
 						url: `https://gitclone.com/gogs/api/v1/users/getRepoExist?path=${homeInput.value}`,
 					}).then(function(res){
-						console.log(res)
+						if(res.status !== 200) {
+							// 不是200,说明需要添加
+							// checkReadme(homeInput.value)
+						} else {
+							// 是200说明已经存在该项目，向用户报错误
+							showMask(
+								"该项目已存在于gogs镜像当中，请勿重复添加",
+								"The project already exists in the gogs mirror, please do not add it repeatedly"
+							)
+						}
+					}).catch(function(err){
+						console.log("catch 到了gogs的错误")
+						console.log(err)
+						checkReadme(homeInput.value)
 					})
 				} else {
-					console.log("格式不对")
-					// $('.ui.basic.modal')
-					// 	.modal('show')
-					// ;
+					// 地址不正确就向用户报错误
+					showMask(
+						"您输入的地址有误，请输入正确的地址，例如：https://github.com/flutter/flutter.git",
+						"The address you entered is wrong, please input right address like: https://github.com/flutter/flutter.git"
+					)
 				}
 			}
 		}
@@ -522,7 +585,7 @@
 							fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
 					}
 			}
-			return fmt; 
+			return fmt;
 		}
 
 		// 获取节点信息
