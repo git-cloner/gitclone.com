@@ -381,7 +381,7 @@
 
 		// 发送生成镜像的请求
 		function checkReadme(path) {
-			let proUrl = `https://gitclone.com/gitcache/${path.slice(8)}/git-upload-pack`
+			let proUrl = `https://gitclone.com/${path.slice(8)}/git-upload-pack`
 			//let devUrl = `http://localhost:5000/${path.slice(8)}/git-upload-pack`
 			axios({method:'post', url: proUrl}).then(function(res) {
 				let hasCache = res.headers["cache-control"] === "no-cache, max-age=0, must-revalidate, no-cache, max-age=0, must-revalidate"
