@@ -419,13 +419,13 @@
 				// 如果选择stackoverflow镜像进行搜索
 				if (homeInput.value !== "") {
 					axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/search'}).then(function(res){
-						// window.open(`https://www.gitclone.com/so/questions?search==${homeInput.value}`,"_self")
-						window.open(` http://61.133.217.141:3000/questions?search==${homeInput.value}`,"_self")
+						window.open(`https://so.gitclone.com/questions?search==${homeInput.value}`,"_self")
+						// window.open(` http://61.133.217.141:3000/questions?search==${homeInput.value}`,"_self")
 					})
 				} else {
 					axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/search'}).then(function(res){
-						// window.open(`https://www.gitclone.com/so/questions`,"_self")
-						window.open(`http://61.133.217.141:3000/questions`,"_self")
+						window.open(`https://so.gitclone.com/so/questions`,"_self")
+						// window.open(`http://61.133.217.141:3000/questions`,"_self")
 					})
 				}
 			}
