@@ -26,8 +26,9 @@
 
 		<!-- 主题部分-->
 	  <div class="ui text container">
+			<!--镜像部分-->
 			<div class="home-title">
-				<img src="/img/title.ico" style="width:300px" >
+				<img src="/img/title.ico" style="width:300px;margin-bottom: 10px;" >
 				<!-- <h1 style="margin-top: -10px;" class="ui inverted header">
 					{{Tr(Lang, "home.title")}}
 				</h1> -->
@@ -37,11 +38,11 @@
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					margin-top: 80px;
+					margin-top: 50px;
 				}
 				.home-search-wrapper {
 					display: flex;
-					margin-top: 40px;
+					margin-top: 20px;
 				}
 				.home-input {
 					padding-left: 20px;
@@ -59,6 +60,12 @@
 					background-color: #4e6ef2;
 					text-align: center;
 					color: #fff;
+				}
+				.home-ico {
+					width: 500px;
+					height: 50px;
+					display: flex;
+					flex-direction: row
 				}
 				.home-search:hover {
 					background-color: #4662d9;
@@ -137,6 +144,36 @@
 				}
 
 			</style>
+
+			<style>
+				.ico-img {
+					width: 30px;
+					height: 30px;
+					border-radius: 15px;
+					margin-bottom: -3px;
+				}
+				.ico-a {
+					font-size: 20px;
+					color: #fff;
+					margin-top: 20px;
+				}
+				.radio-style {
+					margin-left: 40px;
+					width: 20px;
+					height: 20px;
+				}
+			</style>
+  		<input type="radio" id="github" name="radio" value="github" checked  class="radio-style">
+			<img src="/img/github.png" class="ico-img" alt="">
+  		<label for="github" class="ico-a">GitHub镜像</label>
+
+			<input type="radio" id="stackoverflow" name="radio" value="stackoverflow" class="radio-style">
+			<img src="/img/stackoverflow.png" class="ico-img" alt="">
+  		<label for="stackoverflow" class="ico-a">Stackoverflow镜像</label>
+
+
+
+
 			<!--输入框部分-->
 			<div class="home-search-wrapper">
 				<input id="home-input" class="home-input" placeholder="{{Tr(Lang, 'home.temp_code14')}}" autofocus/>
@@ -351,7 +388,6 @@
 		var RequestAddress = 'https://gitclone.com/gitcache/system/info/'
 		var hotSearchDataURL = 'https://gitclone.com/gitcache/system/recommend/'
 
-
 		// 通过检测上个github网页
 		var lastWebPageAddress = document.referrer !== ""
 
@@ -367,15 +403,33 @@
 		var homeInput = document.getElementById("home-input")
 		var homeIntroduce = document.getElementById("introduce-part")
 		function search() {
-			if (homeInput.value !== "") {
-				axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/search'}).then(function(res){
-					window.open(`https://www.gitclone.com/gogs/search/clonesearch?q=${homeInput.value}`,"_self")
-				})
+			let isSearchGithub = document.getElementById("github").checked
+			if(isSearchGithub) {
+				// 如果选择github镜像进行搜索
+				if (homeInput.value !== "") {
+					axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/search'}).then(function(res){
+						window.open(`https://www.gitclone.com/gogs/search/clonesearch?q=${homeInput.value}`,"_self")
+					})
+				} else {
+					axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/search'}).then(function(res){
+						window.open(`https://www.gitclone.com/gogs/search/clonesearch`,"_self")
+					})
+				}
 			} else {
-				axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/search'}).then(function(res){
-					window.open(`https://www.gitclone.com/gogs/search/clonesearch`,"_self")
-				})
+				// 如果选择stackoverflow镜像进行搜索
+				if (homeInput.value !== "") {
+					axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/search'}).then(function(res){
+						// window.open(`https://www.gitclone.com/so/questions?search==${homeInput.value}`,"_self")
+						window.open(` http://61.133.217.141:3000/questions?search==${homeInput.value}`,"_self")
+					})
+				} else {
+					axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/search'}).then(function(res){
+						// window.open(`https://www.gitclone.com/so/questions`,"_self")
+						window.open(`http://61.133.217.141:3000/questions`,"_self")
+					})
+				}
 			}
+
 		}
 
 
@@ -430,6 +484,14 @@
 
 		// 添加镜像
 		function addmirror() {
+			console.log("进入生成镜像",!document.getElementById("github").checked)
+			if(!document.getElementById("github").checked){
+				showMask(
+					"请选择Github镜像条件下进行生成镜像",
+					"Please select the Github mirroring condition to generate the mirror"
+				)
+				return
+			}
 			// 检查输入地址的正确性
 			var mirrorAddress = /https:\/\/github.com\/*\/*/
 			if (homeInput.value !== "") {
