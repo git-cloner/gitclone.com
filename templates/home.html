@@ -351,6 +351,26 @@
 		</div>
 	</div>
 
+	<!-- 地图使用 -->
+	<div class="ui vertical stripe segment" style="flex: 0;">
+		<style>
+			.iframeClass {
+				border: 1px solid rgba(34,36,38,.15);
+			}
+		</style>
+		<div class="ui aligned stackable three column grid container">
+			<div style="font-size: 2.5em;font-weight: bold;text-align:center;padding-bottom: 30px;">
+				{{Tr(Lang, "home.temp_code27")}}
+			</div>
+			<iframe
+				src="http://172.16.62.36:5601/app/kibana#/visualize/edit/gitClone24%E5%B0%8F%E6%97%B6%E8%AE%BF%E9%97%AE%E6%83%85%E5%86%B5?embed=true&_g=(refreshInterval:(display:'10%20seconds',pause:!f,value:10000),time:(from:now-1440m,mode:quick,to:now))&_a=(filters:!(),linked:!f,query:(query_string:(analyze_wildcard:!t,query:'*')),uiState:(spy:(mode:(fill:!f,name:!n))),vis:(aggs:!((id:'1',params:(customLabel:%E8%AE%BF%E9%97%AE%E6%95%B0),schema:metric,type:count),(id:'2',params:(autoPrecision:!t,customLabel:%E4%BD%8D%E7%BD%AE,field:geoip.location,mapCenter:!(33.43144133557529,0),mapZoom:2,precision:2),schema:segment,type:geohash_grid)),listeners:(),params:(addTooltip:!t,heatBlur:'23',heatMaxZoom:'10',heatMinOpacity:'0.79',heatNormalizeData:!t,heatRadius:'22',isDesaturated:!t,mapType:'Shaded%20Circle%20Markers',wms:(enabled:!f,options:(attribution:'Maps%20provided%20by%20USGS',format:image%2Fpng,layers:'0',styles:'',transparent:!t,version:'1.3.0'),url:'https:%2F%2Fbasemap.nationalmap.gov%2Farcgis%2Fservices%2FUSGSTopo%2FMapServer%2FWMSServer')),title:gitClone24%E5%B0%8F%E6%97%B6%E8%AE%BF%E9%97%AE%E6%83%85%E5%86%B5,type:tile_map))"			
+				height="600"
+				width="100%"
+				class="iframeClass"
+			></iframe>
+		</div>
+	</div>
+
 
 	<div class="ui vertical stripe segment" style="flex: 2;">
 		<div class="ui aligned stackable three column grid container">
