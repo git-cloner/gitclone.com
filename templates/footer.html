@@ -1,32 +1,55 @@
 <div class="ui inverted vertical footer segment">
   <div class="ui container">
     <div class="ui stackable inverted divided equal height stackable grid">
-      <div class="three wide column" style="width: 25%!important;">
-        <h4 class="ui inverted header">{{Tr(Lang, "footer.about")}}</h4>
-        <p>
-          {{Tr(Lang, "footer.temp_one1")}}<a target="_blank" href="https://github.com/peachdocs/peach"> peach </a>{{Tr(Lang, "footer.temp_one2")}}</p>
-      </div>
-      <div class="three wide column" style="width: 25%!important;">
-        <h4 class="ui inverted header">{{Tr(Lang, "footer.project")}}</h4>
-        <div class="ui inverted link list">
-          <p>{{Tr(Lang, "footer.temp_two1")}}<a target="_blank" href="https://gogs.io"> gogs </a>{{Tr(Lang, "footer.temp_two2")}}</p>
+      <div class="center row">
+        <div class="three wide column" style="width: 25%!important;">
+          <h4 class="ui inverted header">{{Tr(Lang, "footer.about")}}</h4>
+          <p>
+            {{Tr(Lang, "footer.temp_one1")}}<a target="_blank" href="https://github.com/peachdocs/peach"> peach </a>{{Tr(Lang, "footer.temp_one2")}}</p>
         </div>
-      </div>
-      <div class="three wide column" style="width: 25%!important;">
-        <h4 class="ui inverted header">{{Tr(Lang, "footer.issues")}}</h4>
-        <div class="ui inverted link list">
-          <p>{{Tr(Lang, "footer.temp_three1")}}<a target="_blank" href="https://github.com/git-cloner/gitcache/issues"> GitCache </a>{{Tr(Lang, "footer.temp_three2")}}</p>
+        <div class="three wide column" style="width: 25%!important;">
+          <h4 class="ui inverted header">{{Tr(Lang, "footer.project")}}</h4>
+          <div class="ui inverted link list">
+            <p>{{Tr(Lang, "footer.temp_two1")}}<a target="_blank" href="https://gogs.io"> gogs </a>{{Tr(Lang, "footer.temp_two2")}}</p>
+          </div>
         </div>
-      </div>
-      <div class="three wide column" style="width: 25%!important;">
-        <h4 class="ui inverted header">{{Tr(Lang, "footer.lianxi")}}</h4>
-        <div class="ui inverted link list">
-          <p>{{Tr(Lang, "footer.mailbox")}}: gitclone@126.com</p>
+        <div class="three wide column" style="width: 25%!important;">
+          <h4 class="ui inverted header">{{Tr(Lang, "footer.issues")}}</h4>
+          <div class="ui inverted link list">
+            <p>{{Tr(Lang, "footer.temp_three1")}}<a target="_blank" href="https://github.com/git-cloner/gitcache/issues"> GitCache </a>{{Tr(Lang, "footer.temp_three2")}}</p>
+          </div>
         </div>
-      </div>
+        <div class="three wide column" style="width: 25%!important;">
+          <div class="center column">
+            <h4 class="ui inverted header">{{Tr(Lang, "footer.lianxi")}}</h4>
+            <div class="ui inverted link list">
+              <p>{{Tr(Lang, "footer.mailbox")}}: gitclone@126.com</p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
     <div class="row">
       <div class="center column">
-        {{Tr(Lang, "copyright") | safe}} <a href="https://beian.miit.gov.cn">宁ICP备20000544号-1</a>
+        <style>
+          .introduce {
+            text-align:center;
+            width: 100%;
+            display: flex;
+            flex-wrap:wrap;
+            justify-content: center;
+            align-items: center;
+          }
+        </style>
+        <div class="introduce center">
+          <p>
+            <img style="width: 12px; height:12px" src="/img/batb.png" alt="">&nbsp<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=64010602000914">{{Tr(Lang, "ningpublic") | safe}}</a>&nbsp|&nbsp
+            <a href="https://beian.miit.gov.cn"> {{Tr(Lang, "ningip") | safe}}</a>&nbsp|&nbsp
+            {{Tr(Lang, "copyright") | safe}}&nbsp|&nbsp
+            {{Tr(Lang, "address") | safe}}&nbsp &nbsp
+          </p>
+        </div>
       </div>
     </div>
     </div>
