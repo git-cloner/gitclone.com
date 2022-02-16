@@ -1,0 +1,205 @@
+/* 下面是首页的css */
+.home-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
+}
+.home-search-wrapper {
+	display: flex;
+	margin-top: 20px;
+}
+.home-input {
+	margin-right: 5px;
+	padding-left: 20px;
+	border-radius: 10px 10px 10px 10px ;
+	width: 500px;
+	height: 50px;
+	outline: none;
+}
+.home-search {
+	margin: 0 5px;
+	border-radius: 10px 10px 10px 10px;
+	width: 100px;
+	height: 50px;
+	background-color: #4e6ef2;
+	text-align: center;
+	color: #fff;
+}
+.home-ico {
+	display: flex;
+	flex-direction: row;
+	width: 500px;
+	height: 50px;
+	;
+}
+.home-search:hover {
+	background-color: #4662d9;
+	cursor: pointer;
+	color: #fff;
+}
+.search-a {
+	line-height: 50px;
+	color: #fff!important;
+}
+.hot-search {
+	margin-top: 15px;
+	padding-left: 10px;
+	width: 700px;
+	color: #fff;
+}
+.hot-search-item {
+	margin: 0 5px;
+	color: #fff;
+}
+.introduce-part {
+	margin-top: 65px;
+	margin-bottom: 20px;
+}
+
+.introduce_wrapper {
+	display: flex;
+	width: 700px;
+}
+.introduce_github_app {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	margin: 5px 10px;
+	padding: 10px 10px;
+	border-radius: 35px;
+	background: #6882ef;
+}
+
+.introduce_github_link {
+	font-size: large;
+	color: #1b1c1d;
+}
+
+.introduce_github_link:hover {
+	color: #fff;
+}
+.breath_light {
+	overflow: hidden;                               /* 溢出隐藏 */
+	opacity: .1;                                   /* 不透明度 */
+
+/* IE10、Firefox and Opera，IE9以及更早的版本不支持 */
+	animation-name: breath;                         /* 动画名称 */
+	animation-duration: 3s;                         /* 动画时长3秒 */
+	animation-timing-function: ease-in-out;         /* 动画速度曲线：以低速开始和结束 */
+	animation-iteration-count: infinite;            /* 播放次数：无限 */
+
+/* Safari and Chrome */
+
+	-webkit-animation-name: breath;                 /* 动画名称 */
+	-webkit-animation-duration: 3s;                 /* 动画时长3秒 */
+	-webkit-animation-timing-function: ease-in-out; /* 动画速度曲线：以低速开始和结束 */
+	-webkit-animation-iteration-count: infinite;    /* 播放次数：无限 */
+}
+
+@keyframes breath {
+	from {
+		opacity: .5;
+	}                          /* 动画开始时的不透明度 */
+	50% {
+		opacity: 1;
+	}                          /* 动画50% 时的不透明度 */
+	to {
+		opacity: .5;
+	}                          /* 动画结束时的不透明度 */
+}
+
+@-webkit-keyframes breath {
+	from {
+		opacity: .5;
+	}                          /* 动画开始时的不透明度 */
+	50% {
+		opacity: 1;
+	}                          /* 动画50% 时的不透明度 */
+	to {
+		opacity: .5;
+	}                          /* 动画结束时的不透明度 */
+}
+
+.ico-img {
+	margin-bottom: -3px;
+	border-radius: 15px;
+	width: 30px;
+	height: 30px;
+}
+.ico-a {
+	margin-top: 20px;
+	font-size: 20px;
+	color: #fff;
+}
+.radio-style {
+	margin-left: 40px;
+	width: 20px;
+	height: 20px;
+}
+
+.class-not-found-wrapepr {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 700px;
+	height: 50px;
+}
+
+.class-not-found-wrapepr-p {
+	margin-right: 10px;
+	margin-top: 10px;
+}
+.love {
+	display: block;
+	width: 40px;
+	height: 40px;
+	background: url(https://www.zhangxinxu.com/study/201512/web_heart_animation.png) 0 0
+
+	no-repeat;
+	background-size: 2900%;
+	animation: heart-burst steps(28) .8s infinite both;
+}
+@keyframes heart-burst {
+	0% {
+		background-position: 0;
+	}
+	100% {
+		background-position: 100%;
+	}
+}
+
+@keyframes fadenum1 {
+	/*设置内容由显示变为隐藏*/
+	0% {
+		opacity: 0;
+	}
+	.0005% {
+		opacity: 0;
+	}
+	.0025% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.fadenum1 {
+	animation: fadenum1 100000s infinite;
+}
+@keyframes fadenum {
+	/*设置内容由显示变为隐藏*/
+	0% {
+		opacity: 0;
+	}
+	.002% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.fadenum {
+	animation: fadenum 100000s infinite;
+}

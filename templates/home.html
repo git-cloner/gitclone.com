@@ -33,136 +33,6 @@
 					{{Tr(Lang, "home.title")}}
 				</h1> -->
 			</div>
-			<style>
-				.home-title {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					margin-top: 50px;
-				}
-				.home-search-wrapper {
-					display: flex;
-					margin-top: 20px;
-				}
-				.home-input {
-					padding-left: 20px;
-					border-radius: 10px 10px 10px 10px ;
-					width: 500px;
-					height: 50px;
-					outline: none;
-					margin-right: 5px;
-				}
-				.home-search {
-					border-radius: 10px 10px 10px 10px;
-					margin: 0px 5px;
-					width: 100px;
-					height: 50px;
-					background-color: #4e6ef2;
-					text-align: center;
-					color: #fff;
-				}
-				.home-ico {
-					width: 500px;
-					height: 50px;
-					display: flex;
-					flex-direction: row
-				}
-				.home-search:hover {
-					background-color: #4662d9;
-					cursor: pointer;
-					color: #fff;
-				}
-				.search-a {
-					line-height: 50px;
-					color: #fff!important;
-				}
-				.hot-search {
-					margin-top: 15px;
-					padding-left: 10px;
-					width: 700px;
-					color: #fff;
-				}
-				.hot-search-item {
-					margin: 0 5px;
-					color: #fff;
-				}
-				.introduce-part {
-					margin-top: 65px;
-					margin-bottom: 20px;
-				}
-
-				.introduce_wrapper {
-					width: 700px;
-					display: flex;
-				}
-				.introduce_github_app {
-					flex: 1;
-					background: #6882ef;
-					margin: 5px 10px;
-					padding: 10px 10px;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					border-radius: 35px;
-				}
-
-				.introduce_github_link {
-					color:#1b1c1d;
-					font-size: large;
-				}
-
-				.introduce_github_link:hover {
-					color:#ffffff;
-				}
-				.breath_light {
-						opacity: 0.1;                                   /* 不透明度 */
-						overflow: hidden;                               /* 溢出隐藏 */
-
-						/* IE10、Firefox and Opera，IE9以及更早的版本不支持 */
-						animation-name: breath;                         /* 动画名称 */
-						animation-duration: 3s;                         /* 动画时长3秒 */
-						animation-timing-function: ease-in-out;         /* 动画速度曲线：以低速开始和结束 */
-						animation-iteration-count: infinite;            /* 播放次数：无限 */
-
-						/* Safari and Chrome */
-						-webkit-animation-name: breath;                 /* 动画名称 */
-						-webkit-animation-duration: 3s;                 /* 动画时长3秒 */
-						-webkit-animation-timing-function: ease-in-out; /* 动画速度曲线：以低速开始和结束 */
-						-webkit-animation-iteration-count: infinite;    /* 播放次数：无限 */
-				}
-
-				@keyframes breath {
-						from { opacity: 0.5; }                          /* 动画开始时的不透明度 */
-						50%  { opacity:   1; }                          /* 动画50% 时的不透明度 */
-						to   { opacity: 0.5; }                          /* 动画结束时的不透明度 */
-				}
-
-				@-webkit-keyframes breath {
-						from { opacity: 0.5; }                          /* 动画开始时的不透明度 */
-						50%  { opacity:   1; }                          /* 动画50% 时的不透明度 */
-						to   { opacity: 0.5; }                          /* 动画结束时的不透明度 */
-				}
-
-			</style>
-
-			<style>
-				.ico-img {
-					width: 30px;
-					height: 30px;
-					border-radius: 15px;
-					margin-bottom: -3px;
-				}
-				.ico-a {
-					font-size: 20px;
-					color: #fff;
-					margin-top: 20px;
-				}
-				.radio-style {
-					margin-left: 40px;
-					width: 20px;
-					height: 20px;
-				}
-			</style>
   		<input type="radio" id="github" name="radio" value="github" checked  class="radio-style">
 			<img src="/img/github.png" class="ico-img" alt="">
   		<label for="github" class="ico-a">{{Tr(Lang, "home.temp_code25")}}</label>
@@ -190,7 +60,11 @@
 					<h2 style="color:#ffffff">{{Tr(Lang, "home.tag_line")}}</h2>
 				</div>
 				<div style="margin:10px 0px;background-color: #91a3ea;border-radius: 35px;padding-bottom: 5px;">
-					<a style="font-size: 1.5em;" href="https://www.gitclone.com/gogs/vipserver" onclick="axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/vipvisit/'}).then(function(res){})">
+					<!-- <a style="font-size: 1.5em;" href="https://www.gitclone.com/gogs/vipserver" onclick="axios({method: 'get',url: 'https://gitclone.com/gitcache/stat/vipvisit/'}).then(function(res){})">
+						<img src="/img/speaker.png" style="width: 32px;position: relative;top:5px">{{Tr(Lang, "home.temp_code3")}}
+					</a> -->
+					<!-- 推广classnotfound -->
+					<a style="font-size: 1.5em;" href="https://classnotfound.com.cn" target="_blank">
 						<img src="/img/speaker.png" style="width: 32px;position: relative;top:5px">{{Tr(Lang, "home.temp_code3")}}
 					</a>
 				</div>
@@ -228,39 +102,6 @@
 	<!-- 快速上手和效果显著 -->
 	<div class="ui vertical stripe segment" style="flex: 2;">
 		<style>
-			@keyframes fadenum1 {
-				/*设置内容由显示变为隐藏*/
-				0% {
-					opacity: 0;
-				}
-				.0005% {
-					opacity: 0;
-				}
-				.0025% {
-					opacity: 1;
-				}
-				100% {
-					opacity: 1;
-				}
-			}
-			.fadenum1 {
-				animation: fadenum1 100000s infinite;
-			}
-			@keyframes fadenum {
-				/*设置内容由显示变为隐藏*/
-				0% {
-					opacity: 0;
-				}
-				.002% {
-					opacity: 1;
-				}
-				100% {
-					opacity: 1;
-				}
-			}
-			.fadenum {
-				animation: fadenum 100000s infinite;
-			}
 		</style>
 		<div class="ui aligned stackable two column grid container">
 			<div class="column fadenum">
@@ -330,9 +171,23 @@
 	<!-- 地图使用 -->
 	<div class="ui vertical stripe segment" style="flex: 0;">
 		<style>
-			.iframeClass {
-				border: 1px solid rgba(34,36,38,.15);
-			}
+.iframeClass {
+	border: 1px solid rgba(34,36,38,.15);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		</style>
 		<div class="ui aligned stackable three column grid container">
 			<div style="font-size: 2.5em;font-weight: bold;text-align:center;padding-bottom: 30px;">
