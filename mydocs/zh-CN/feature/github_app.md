@@ -16,8 +16,8 @@ name: 提供github app下载
 
 <img src="/img/github_app_download.png" style="width:400px" >
 
-<a style="margin-left: 70px;" href="https://www.gitclone.com/download/GitHub_1.3.1_apktrending.com.apk">下载地址1</a>
-<a style="margin-left: 130px;" href="https://www.gitclone.com/download/GitHub_v1.2.17_apkpure.com.apk">下载地址2</a>
+<a style="margin-left: 70px;" href="https://www.gitclone.com/download/GitHub_v1.54.0_uptodown.com.apk">下载地址1</a>
+<a style="margin-left: 130px;" href="https://www.gitclone.com/download/GitHub_v1.55.0_apkpure.com.apk">下载地址2</a>
 
 
 ## 3、登录教程
