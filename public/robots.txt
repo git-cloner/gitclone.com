@@ -39,4 +39,4 @@ User-agent: psbot
 Disallow: 
 User-agent: *
 Disallow: 
-Sitemap: https://gitclone.com/sitemap.xml
+Sitemap: https://www.gitclone.com/sitemap.xml

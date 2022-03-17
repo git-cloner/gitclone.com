@@ -9,6 +9,8 @@
 <url><loc>https://www.gitclone.com/docs/feature/github_desktop</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
 <url><loc>https://www.gitclone.com/docs/feature/github_cli</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
 <url><loc>https://www.gitclone.com/docs/feature/github_git</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.gitclone.com/docs/feature/github_sourcetreeapp</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.gitclone.com/docs/feature/github_tortoisegit</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
 <url><loc>https://www.gitclone.com/docs/intro</loc><changefreq>daily</changefreq><priority>0.69</priority></url>
 <url><loc>https://www.gitclone.com/docs/feature/gitclone_web</loc><changefreq>daily</changefreq><priority>0.69</priority></url>
 <url><loc>https://www.gitclone.com/docs/feature/addmirror</loc><changefreq>daily</changefreq><priority>0.69</priority></url>
