@@ -1,0 +1,9 @@
+---
+名前: プロフィールです
+---
+
+# Gitclone.com
+
+​gitclone.comは、頻繁にアクセスするgithubのコードベースをキャッシュすることで、githubからのgitclone操作を高速化するgithub.comキャッシュアクセレレーションサイトです。あなたが采`git clone https://gitclone.com/github.com/yourrepository` の方式にお客様コード庫、gitclone.comが一つの初回を後もはや开発お客様の時、アップミラー・キャッシュを利用してcloneの速度を大幅に向上させており、gitcloneは通常githubでは20k/s程度ですが、gitclone.comで高速化すると1.2M/sになります。
+
+​gitcloneの仕組みはこうです開発者が初めてgitclone.com経由でcloneプロジェクトをプロキシすると,gitclone.comはプロジェクトを非同期的にミラーリングし,以後開発者cloneというプロジェクトがあると,github.comからcloneするのではなく,上gitclone.comのローカルミラーリングを利用するようになります。gitclone.comは毎晩github.comと同期します増加するミラーリングのハードディスクリソースの需要に対処するため、gitclone.comはブロックチェーン・クラスター方式で拡張しており、毎回のミラーリング作業はクラスター内のすべてのサーバにブロードキャストされ、各サーバは後続のclone要求に応答するためにミラーリングを生成して登録することを選択できるようになっています。またgitclone.comはstackoverflow.comやgo getなどへのアクセスを高速化し、「開発者向け」にすると説明しています。
