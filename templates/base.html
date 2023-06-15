@@ -39,6 +39,10 @@
 			<link rel="stylesheet" href="/css/highlight-9.12.0/default.css">
 		{% endif %}
 		<script src="/js/highlight-9.12.0.pack.js"></script>
+
+
+		<!-- 万维网连接 -->
+		<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js"></script>
 		<!-- <script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script> -->
 		<script>
 			// 百度统计
@@ -97,23 +101,8 @@
 		<title>{% block title %}{{Title}}{% endblock %}</title>
 	</head>
 	<body>
+		<!-- 万维网广告处 -->
+		<div class="wwads-cn wwads-vertical wwads-sticky" data-id="253" style="max-width:180px"></div>
 		{% block body %}{% endblock %}
-
-		<!-- 以下都是广告代码 -->
-		<!-- <div id="sorollDiv1" style="z-index: 999; width:150px; height:150px;position: fixed;bottom: 50px;right:50px">
-			<span id="advbutton" onclick="closeadvering()" style="position:absolute;top:0; right:50px;font-size:18px; color: #8c8e90">x</span>
-			<script type="text/javascript">var ufid=62203;var ufwidth=105;var ufheight=105;var ufdomain="//js.penxiangge.com";document.write("<scr"+"ipt type='text/javascript' src='"+ufdomain+"/Include/data_hf'></scri"+"pt>");</script>
-		</div>
-		<script>
-			// 定时开启广告
-			window.setInterval(() => {
-				document.getElementById("sorollDiv1").style.display = "block"
-			}, 60000);
-
-			// 点击按钮关闭广告
-			$('#advbutton').click(function(){
-				document.getElementById("sorollDiv1").style.display = "none"
-			});
-		</script> -->
 	</body>
 </html>
