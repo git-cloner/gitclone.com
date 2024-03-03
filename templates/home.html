@@ -33,17 +33,7 @@
 					{{Tr(Lang, "home.title")}}
 				</h1> -->
 			</div>
-  		<input type="radio" id="github" name="radio" value="github" checked  class="radio-style">
-			<img src="/img/github.png" class="ico-img" alt="">
-  		<label for="github" class="ico-a">{{Tr(Lang, "home.temp_code25")}}</label>
-
-			<input type="radio" id="stackoverflow" name="radio" value="stackoverflow" class="radio-style">
-			<img src="/img/stackoverflow.png" class="ico-img" alt="">
-  		<label for="stackoverflow" class="ico-a">{{Tr(Lang, "home.temp_code26")}}</label>
-
-
-
-
+  		
 			<!--输入框部分-->
 			<div class="home-search-wrapper">
 				<input id="home-input" class="home-input" placeholder="{{Tr(Lang, 'home.temp_code14')}}" style="color:black;" autofocus/>
@@ -230,7 +220,7 @@
 		var homeInput = document.getElementById("home-input")
 		var homeIntroduce = document.getElementById("introduce-part")
 		function search() {
-			let isSearchGithub = document.getElementById("github").checked
+			let isSearchGithub = true
 			if(isSearchGithub) {
 				// 如果选择github镜像进行搜索
 				if (homeInput.value !== "") {
