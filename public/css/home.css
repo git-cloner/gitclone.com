@@ -3,7 +3,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: 50px;
+	margin-top: 5px;
 }
 .home-search-wrapper {
 	display: flex;
@@ -30,7 +30,7 @@
 	display: flex;
 	flex-direction: row;
 	width: 500px;
-	height: 50px;
+	height: 40px;
 	;
 }
 .home-search:hover {
@@ -39,11 +39,11 @@
 	color: #fff;
 }
 .search-a {
-	line-height: 50px;
+	line-height: 40px;
 	color: #fff!important;
 }
 .hot-search {
-	margin-top: 15px;
+	margin-top: 10px;
 	padding-left: 10px;
 	width: 700px;
 	color: #fff;
