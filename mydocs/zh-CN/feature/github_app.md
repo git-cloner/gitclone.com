@@ -16,9 +16,11 @@ name: 提供github app下载
 
 <img src="/img/github_app_download.png" style="width:400px" >
 
-<a style="margin-left: 70px;" href="https://www.gitclone.com/download/GitHub_v1.54.0_uptodown.com.apk">下载地址1</a>
-<a style="margin-left: 130px;" href="https://www.gitclone.com/download/GitHub_v1.55.0_apkpure.com.apk">下载地址2</a>
+<a style="margin-left: 10px;" href="https://www.gitclone.com/download/GitHub_v1.54.0_uptodown.com.apk">下载地址1</a>
+<a style="margin-left: 30px;" href="https://www.gitclone.com/download/GitHub_v1.55.0_apkpure.com.apk">下载地址2</a>
+<a style="margin-left: 50px;" href="https://gitclone.com/download1/github/com.github.android_1.199.1-10243_1arch_1dpi_5b9f0f0120b7c4f57aa07d137e6d098e_apkmirror.com.apkm">下载地址3</a>
 
+<a style="margin-left: 70px;" href="https://gitclone.com/download1/github/com.github.android_1.199.1-841_4arch_7dpi_a37622752a85a52fbf632c1d40cdecdc_apkmirror.com.apkm">下载地址4</a>
 
 ## 3、登录教程
 
